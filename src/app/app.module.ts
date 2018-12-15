@@ -16,6 +16,8 @@ import { ReportPage } from '../pages/report/report';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen'; 
 import { SummarizeReportPage } from '../pages/summarize-report/summarize-report';
+import { IncomeReportPage } from '../pages/income-report/income-report';
+import { PaymentReportPage } from '../pages/payment-report/payment-report';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,12 @@ import { SummarizeReportPage } from '../pages/summarize-report/summarize-report'
     TmanagePage
 =======
     SummarizeReportPage,
+<<<<<<< HEAD
 >>>>>>> 0986bf227a29b34767982837370287cb5a462503
+=======
+    IncomeReportPage,
+    PaymentReportPage,
+>>>>>>> 24b66611efb45d94a7ef1ae787f217a3e47add63
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,12 @@ import { SummarizeReportPage } from '../pages/summarize-report/summarize-report'
     TmanagePage
 =======
     SummarizeReportPage,
+<<<<<<< HEAD
 >>>>>>> 0986bf227a29b34767982837370287cb5a462503
+=======
+    IncomeReportPage,
+    PaymentReportPage,
+>>>>>>> 24b66611efb45d94a7ef1ae787f217a3e47add63
   ],
   providers: [
     StatusBar,

@@ -43,7 +43,7 @@ import { PaymentReportPage } from '../pages/payment-report/payment-report';
     SummarizeReportPage,
     IncomeReportPage,
     PaymentReportPage,
-  ], 
+  ],
   providers: [
     StatusBar,
     SplashScreen,

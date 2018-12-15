@@ -11,7 +11,19 @@
 
 
 <ion-content padding>
-
-  <ion-label> รายงานสรุป </ion-label>
-
+    <ion-list>
+      <ion-item text-center> <h1><b>Super Hero</b> </h1></ion-item>
+      <ion-item> <ion-label text-left><b>Name</b></ion-label><ion-label text-Right><b>Company</b></ion-label> </ion-item>
+        <ion-item-sliding *ngFor ="let hero of heroes ; let i = index">
+          <ion-item>
+           <ion-label text-left>  {{i+1}} : {{hero.name}} </ion-label> <ion-label text-right> {{hero.company}} </ion-label>
+          </ion-item>
+          <ion-item-options side="right">
+              <button ion-button (click)="info(item)">Info</button>
+              <button ion-button color="danger" (click)="delete(item)">
+                  <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+              </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
 </ion-content>

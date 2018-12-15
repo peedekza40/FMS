@@ -7,17 +7,25 @@ import {FormsModule} from '@angular/forms';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { TmanagePage } from '../pages/tmanage/tmanage'; 
+import { ReportPage } from '../pages/report/report';
 
 import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { ReportPage } from '../pages/report/report';
+import { SplashScreen } from '@ionic-native/splash-screen'; 
+import { SummarizeReportPage } from '../pages/summarize-report/summarize-report';
+import { IncomeReportPage } from '../pages/income-report/income-report';
+import { PaymentReportPage } from '../pages/payment-report/payment-report';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    ReportPage
+    ReportPage,
+    TmanagePage,
+    SummarizeReportPage,
+    IncomeReportPage,
+    PaymentReportPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +38,11 @@ import { ReportPage } from '../pages/report/report';
     MyApp,
     HomePage,
     ListPage,
-    ReportPage
+    ReportPage,
+    TmanagePage,
+    SummarizeReportPage,
+    IncomeReportPage,
+    PaymentReportPage
   ],
   providers: [
     StatusBar,

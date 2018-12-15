@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ListPage } from '../list/list';
-import { HomePage } from '../home/home';
+import { SummarizeReportPage } from '../summarize-report/summarize-report';
+import { IncomeReportPage } from '../income-report/income-report';
+import { PaymentReportPage } from '../payment-report/payment-report';
 
 
 /**
@@ -17,9 +18,10 @@ import { HomePage } from '../home/home';
   templateUrl: 'report.html',
 })
 export class ReportPage {
-
-  tab1Root = HomePage;
-  tab2Root = ListPage;
+ 
+  tab1Root = SummarizeReportPage;
+  tab2Root = IncomeReportPage;
+  tab3Root = PaymentReportPage;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ListPage } from '../list/list';
-import { HomePage } from '../home/home';
+import { ReportSummarizePage } from '../report-summarize/report-summarize';
 
 
 /**
@@ -18,7 +18,7 @@ import { HomePage } from '../home/home';
 })
 export class ReportPage {
 
-  tab1Root = HomePage;
+  tab1Root = ReportSummarizePage;
   tab2Root = ListPage;
 
 

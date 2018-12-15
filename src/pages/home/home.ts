@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { hasLifecycleHook } from '@angular/compiler/src/lifecycle_reflector';
 
 @Component({
   selector: 'page-home',
@@ -12,6 +13,6 @@ export class HomePage {
   }
 
   somefunction(){
-    
+    sdasdasdasd
   }
 }

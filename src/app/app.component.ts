@@ -8,7 +8,6 @@ import { ListPage } from '../pages/list/list';
 import { ReportPage } from '../pages/report/report';
 import { TmanagePage } from '../pages/tmanage/tmanage'; 
 
-
 @Component({
   templateUrl: 'app.html'
 })

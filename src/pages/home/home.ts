@@ -14,5 +14,6 @@ export class HomePage {
 
   somefunction(){
     sdasdasdasd
+    sdfghjkljhgfsdfghjkljhgfdf
   }
 }

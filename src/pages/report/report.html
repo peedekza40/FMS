@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
@@ -14,7 +14,7 @@
   
 </ion-header>
 <ion-content padding>
-      <ion-tabs selectedIndex="0" tabsPlacement="top">
+      <ion-tabs selectedIndex="0" tabsPlacement="top" color="primary">
           <ion-tab [root]="tab1Root" tabTitle="สรุป" ></ion-tab>
           <ion-tab [root]="tab2Root" tabTitle="รายรับ" ></ion-tab>
           <ion-tab [root]="tab3Root" tabTitle="รายจ่าย" ></ion-tab>

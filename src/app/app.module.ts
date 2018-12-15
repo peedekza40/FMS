@@ -25,16 +25,10 @@ import { PaymentReportPage } from '../pages/payment-report/payment-report';
     HomePage,
     ListPage,
     ReportPage,
-<<<<<<< HEAD
-    TmanagePage
-=======
+    TmanagePage,
     SummarizeReportPage,
-<<<<<<< HEAD
->>>>>>> 0986bf227a29b34767982837370287cb5a462503
-=======
     IncomeReportPage,
-    PaymentReportPage,
->>>>>>> 24b66611efb45d94a7ef1ae787f217a3e47add63
+    PaymentReportPage
   ],
   imports: [
     BrowserModule,
@@ -48,16 +42,10 @@ import { PaymentReportPage } from '../pages/payment-report/payment-report';
     HomePage,
     ListPage,
     ReportPage,
-<<<<<<< HEAD
-    TmanagePage
-=======
+    TmanagePage,
     SummarizeReportPage,
-<<<<<<< HEAD
->>>>>>> 0986bf227a29b34767982837370287cb5a462503
-=======
     IncomeReportPage,
-    PaymentReportPage,
->>>>>>> 24b66611efb45d94a7ef1ae787f217a3e47add63
+    PaymentReportPage
   ],
   providers: [
     StatusBar,

@@ -18,7 +18,7 @@ import { PaymentReportPage } from '../payment-report/payment-report';
   templateUrl: 'report.html',
 })
 export class ReportPage {
-
+ 
   tab1Root = SummarizeReportPage;
   tab2Root = IncomeReportPage;
   tab3Root = PaymentReportPage;

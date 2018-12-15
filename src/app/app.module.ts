@@ -7,7 +7,7 @@ import {FormsModule} from '@angular/forms';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { TmanagePage } from '../pages/tmanage/tmanage';
+import { TmanagePage } from '../pages/tmanage/tmanage'; 
 import { ReportPage } from '../pages/report/report';
 
 import { StatusBar } from '@ionic-native/status-bar';

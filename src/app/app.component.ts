@@ -14,7 +14,7 @@ import { ReportPage } from '../pages/report/report';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-
+ 
   rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
@@ -28,7 +28,6 @@ export class MyApp {
       { title: 'List', component: ListPage },
       { title: 'Report', component: ReportPage  },
       { title: 'TmanagePage', component: TmanagePage  },
-      { title: 'Report', component: ReportPage },
     ];
 
   }

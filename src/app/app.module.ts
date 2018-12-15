@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { ErrorHandler, NgModule} from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import {FormsModule} from '@angular/forms';
 
@@ -15,6 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SummarizeReportPage } from '../pages/summarize-report/summarize-report';
 import { IncomeReportPage } from '../pages/income-report/income-report';
 import { PaymentReportPage } from '../pages/payment-report/payment-report';
+import { ModalssearchPage } from '../pages/modalssearch/modalssearch';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PaymentReportPage } from '../pages/payment-report/payment-report';
     TmanagePage,
     SummarizeReportPage,
     IncomeReportPage,
-    PaymentReportPage
+    PaymentReportPage,
+    ModalssearchPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { PaymentReportPage } from '../pages/payment-report/payment-report';
     TmanagePage,
     SummarizeReportPage,
     IncomeReportPage,
-    PaymentReportPage
+    PaymentReportPage,
+    ModalssearchPage
   ],
   providers: [
     StatusBar,

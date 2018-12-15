@@ -13,18 +13,36 @@
 </ion-header>
 
 <ion-content padding>
-        <h2 style="font-size: 18px; text-align: center;"><b>ตารางการลงบัญชีรายรับ-รายจ่าย</b></h2>
-        <ion-item>   
-            <ion-label  style="font-size: 13px; text-align: left;">รายละเอียด</ion-label>
-            <ion-label  style="font-size: 13px;  text-align: center;">คำอธิบายรายการ</ion-label>
-            <ion-label  style="font-size: 13px;  text-align: right;">จำนวนเงิน</ion-label>
-        </ion-item>
+        <ion-row>
+                <ion-tabs selectedIndex="0" tabsPlacement="top" color="primary">
+                        <ion-tab [root]="tab2Root" tabTitle="รายรับ" ></ion-tab>
+                        <ion-tab [root]="tab3Root" tabTitle="รายจ่าย" ></ion-tab>
+             </ion-tabs>
+        </ion-row>
+         <br><br><br>    
+         <!-- Header table -->       
+         <ion-row>
+             <ion-col size="12" >
+                    <h1 style="font-size: 18px"><b>ตารางลงรายการบัญชีรายรับ-รายจ่าย</b></h1>
+             </ion-col>
+         </ion-row>     
+         <ion-row>
+                    <ion-item>   
+                            <ion-label  style="font-size: 13px; text-align: left;">รายละเอียด</ion-label>
+                            <ion-label  style="font-size: 13px;  text-align: center;">คำอธิบายรายการ</ion-label>
+                            <ion-label  style="font-size: 13px;  text-align: right;">จำนวนเงิน</ion-label>
+                        </ion-item>
+         </ion-row>
+                    
+
      <!-- Data -->
-    <ion-list>
-        <ion-list-header>
-        <ion-label style="font-size: 12px;  text-align: left;">Items</ion-label>
-        <ion-label style="font-size: 12px;  text-align: center;">Items</ion-label>
-        <ion-label style="font-size: 12px;  text-align: right;">Items</ion-label>
-        </ion-list-header>
-   </ion-list>
+                <ion-list>
+                        <ion-list-header>
+                        <ion-label style="font-size: 12px;  text-align: left;">Items</ion-label>
+                        <ion-label style="font-size: 12px;  text-align: center;">Items</ion-label>
+                        <ion-label style="font-size: 12px;  text-align: right;">Items</ion-label>
+                        </ion-list-header>
+                   </ion-list>
+               
+    
 </ion-content>

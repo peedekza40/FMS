@@ -11,4 +11,9 @@
 
 <ion-content padding>
   <ion-label> รายรับ </ion-label>
+  <ion-tabs selectedIndex="0" tabsPlacement="top" color="primary">
+    <ion-tab [root]="tab1Root" tabTitle="<" ></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="10/12/2561 - 10/12/2561" ></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle=">" ></ion-tab>
+  </ion-tabs>
 </ion-content>

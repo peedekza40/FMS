@@ -27,7 +27,7 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Report', component: ReportPage  },
-      { title: 'TmanagePage', component: TmanagePage  },
+      { title: 'TmanagePage', component: TmanagePage  }, 
     ];
 
   }

@@ -6,7 +6,7 @@ import { ReportPage } from './report';
 @NgModule({
   declarations: [
     ReportPage,
-  ],
+  ], 
   imports: [
     IonicPageModule.forChild(ReportPage),
   ],

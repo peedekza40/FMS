@@ -11,4 +11,4 @@ import { ReportPage } from './report';
     IonicPageModule.forChild(ReportPage),
   ],
 })
-export class ReportPageModule {}
+export class ReportPageModule {} 

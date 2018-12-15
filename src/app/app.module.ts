@@ -25,7 +25,7 @@ import { PaymentReportPage } from '../pages/payment-report/payment-report';
     TmanagePage,
     SummarizeReportPage,
     IncomeReportPage,
-    PaymentReportPage
+    PaymentReportPage,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +42,7 @@ import { PaymentReportPage } from '../pages/payment-report/payment-report';
     TmanagePage,
     SummarizeReportPage,
     IncomeReportPage,
-    PaymentReportPage
+    PaymentReportPage,
   ],
   providers: [
     StatusBar,

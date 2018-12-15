@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { TmanagePage } from '../pages/tmanage/tmanage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,7 +18,8 @@ import { ReportPage } from '../pages/report/report';
     MyApp,
     HomePage,
     ListPage,
-    ReportPage
+    ReportPage,
+    TmanagePage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { ReportPage } from '../pages/report/report';
     MyApp,
     HomePage,
     ListPage,
-    ReportPage
+    ReportPage,
+    TmanagePage
   ],
   providers: [
     StatusBar,

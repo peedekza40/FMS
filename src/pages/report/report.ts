@@ -21,7 +21,7 @@ export class ReportPage {
  
   tab1Root = SummarizeReportPage; 
   tab2Root = IncomeReportPage;
-  tab3Root = PaymentReportPage;
+  tab3Root = PaymentReportPage; 
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

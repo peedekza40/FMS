@@ -22,13 +22,13 @@
          <br><br><br>    
          <!-- Header table -->       
          <ion-row>
-             <ion-col size="12" >
-                    <h1 style="font-size: 18px"><b>ตารางลงรายการบัญชีรายรับ-รายจ่าย</b></h1>
+             <ion-col size="1" >
+                    <h1 style="font-size: 18px; text-align: center;"><b>ตารางลงรายการบัญชีรายรับ-รายจ่าย</b></h1>
              </ion-col>
          </ion-row>     
          <ion-row>
                     <ion-item>   
-                            <ion-label  style="font-size: 13px; text-align: left;">รายละเอียด</ion-label>
+                            <ion-label   style="font-size: 13px; text-align: left;">รายละเอียด</ion-label>
                             <ion-label  style="font-size: 13px;  text-align: center;">คำอธิบายรายการ</ion-label>
                             <ion-label  style="font-size: 13px;  text-align: right;">จำนวนเงิน</ion-label>
                         </ion-item>
@@ -36,13 +36,34 @@
                     
 
      <!-- Data -->
-                <ion-list>
-                        <ion-list-header>
-                        <ion-label style="font-size: 12px;  text-align: left;">Items</ion-label>
-                        <ion-label style="font-size: 12px;  text-align: center;">Items</ion-label>
-                        <ion-label style="font-size: 12px;  text-align: right;">Items</ion-label>
-                        </ion-list-header>
-                   </ion-list>
+     <ion-list>
+            <ion-item-sliding *ngFor="let objs of obj; let i = index">
+              <ion-item>
+                
+                    <ion-label style="font-size: 12px;  text-align: left;">{{objs.codes}}</ion-label>
+                    <ion-label style="font-size: 12px;  text-align: center;">{{objs.type}}</ion-label>
+                    <ion-label style="font-size: 12px;  text-align: right;">{{objs.total}}</ion-label>
+                   
+         
+                            <!-- <ion-label style="font-size: 12px;  text-align: left;">{{objs.codes}}</ion-label>
+                            <ion-label style="font-size: 12px;  text-align: center;">{{objs.type}}</ion-label>
+                            <ion-label style="font-size: 12px;  text-align: right;">{{objs.total}}</ion-label> -->
+                          
                
-    
+              </ion-item>
+              <ion-item-options side="right">
+                <button ion-button color="primary">
+                  <ion-icon name="mail"></ion-icon>
+                  Email
+                </button>
+              </ion-item-options>
+            </ion-item-sliding>
+          </ion-list>
+                <!-- <ion-list>
+                        <ion-list-header *ngFor="let objs of obj; let i = index">
+                        <ion-label style="font-size: 12px;  text-align: left;">{{objs.codes}}</ion-label>
+                        <ion-label style="font-size: 12px;  text-align: center;">{{objs.type}}</ion-label>
+                        <ion-label style="font-size: 12px;  text-align: right;">{{objs.total}}</ion-label>
+                        </ion-list-header>
+                   </ion-list> -->
 </ion-content>

@@ -17,11 +17,16 @@ import { PaymentReportPage } from '../payment-report/payment-report';
 export class TmanagePage {
   tab2Root = IncomeReportPage;
   tab3Root = PaymentReportPage;
+
+  obj: Array<Object>;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TmanagePage');
   }
+  ngOnInit() {
 
+    this.obj = [{codes:"RE1234",type:"ค่าน้ำ",total:123},{codes:"RE1235",type:"ค่าไฟ",total:123}];
+  }
 }

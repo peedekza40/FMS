@@ -15,6 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SummarizeReportPage } from '../pages/summarize-report/summarize-report';
 import { IncomeReportPage } from '../pages/income-report/income-report';
 import { PaymentReportPage } from '../pages/payment-report/payment-report';
+import { MReportIncomeProvider } from '../providers/m-report-income/m-report-income';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { PaymentReportPage } from '../pages/payment-report/payment-report';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MReportIncomeProvider
   ]
 })
 export class AppModule {}

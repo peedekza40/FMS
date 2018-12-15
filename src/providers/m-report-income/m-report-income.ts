@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import {map} from 'rxjs/operators';
 
@@ -11,11 +11,11 @@ import {map} from 'rxjs/operators';
 @Injectable()
 export class MReportIncomeProvider {
 
-  constructor(public http: HttpClient) {
+  constructor(public http: Http) {
   }
 
   get_by_inc_date() {
-    return this.http.post('http://10.80.6.160:1068/get_by_inc_date',{date:2018-12-16}).pipe(map((res)=>res.json()));
+    return this.http.post('http://10.80.6.160:1068/get_by_inc_date',{date: new Date()}).pipe(map((res)=>res.json()));
   }
 
 }

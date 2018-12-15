@@ -32,6 +32,14 @@ export class TmanagePage implements OnInit {
       this.income_report = response;
     });
   } 
+
+  removeObjs(objs) {
+    objs.forEach((element, index) => {
+      if (element == objs) {
+        objs.splice(index, 1);
+      }
+    });
+  }
 }
 interface Report_inc{
   inc_code: string;

@@ -50,18 +50,11 @@
                 </button>
               </ion-item-options>
               <ion-item-options side="right"> <!-- Slide bar delete -->
-                <button ion-button color="danger">
-                  <ion-icon name="edit"></ion-icon>
+                <button ion-button color="danger" (click)="removeObjs(objs)">
+                  <ion-icon name="delete"></ion-icon>
                   ลบข้อมูล
                 </button>
               </ion-item-options>
             </ion-item-sliding>
           </ion-list>
-                <!-- <ion-list>
-                        <ion-list-header *ngFor="let objs of obj; let i = index">
-                        <ion-label style="font-size: 12px;  text-align: left;">{{objs.codes}}</ion-label>
-                        <ion-label style="font-size: 12px;  text-align: center;">{{objs.type}}</ion-label>
-                        <ion-label style="font-size: 12px;  text-align: right;">{{objs.total}}</ion-label>
-                        </ion-list-header>
-                   </ion-list> -->
 </ion-content>

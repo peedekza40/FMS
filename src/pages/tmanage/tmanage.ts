@@ -26,7 +26,13 @@ export class TmanagePage {
     console.log('ionViewDidLoad TmanagePage');
   }
   ngOnInit() {
-
     this.obj = [{codes:"RE1234",type:"ค่าน้ำ",total:123},{codes:"RE1235",type:"ค่าไฟ",total:123}];
+  }
+  removeObjs(objs) {
+    this.obj.forEach((element, index) => {
+      if (element == objs) {
+        this.obj.splice(index, 1);
+      }
+    });
   }
 }

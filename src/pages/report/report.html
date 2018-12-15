@@ -6,18 +6,18 @@
 -->
 <ion-header>
   <ion-navbar>
-      <!-- <button ion-button menuToggle>
+      <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
-        </button> -->
-    <ion-title >FMS</ion-title>
+        </button>
+    <ion-title >Financial Manage System</ion-title>
   </ion-navbar>
-  <ion-tabs selectedIndex="0" tabsPlacement="top">
-      <ion-tab [root]="tab1Root" tabTitle="สรุป" ></ion-tab>
-      <ion-tab [root]="tab2Root" tabTitle="Lists" ></ion-tab>
-  </ion-tabs>
   
 </ion-header>
 <ion-content padding>
+      <ion-tabs selectedIndex="0" tabsPlacement="top">
+          <ion-tab [root]="tab1Root" tabTitle="สรุป" ></ion-tab>
+          <ion-tab [root]="tab2Root" tabTitle="Lists" ></ion-tab>
+      </ion-tabs>
   
 
 </ion-content>

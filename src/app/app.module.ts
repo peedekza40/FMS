@@ -7,11 +7,8 @@ import {FormsModule} from '@angular/forms';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-<<<<<<< HEAD
 import { TmanagePage } from '../pages/tmanage/tmanage';
-=======
 import { ReportPage } from '../pages/report/report';
->>>>>>> 0986bf227a29b34767982837370287cb5a462503
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen'; 

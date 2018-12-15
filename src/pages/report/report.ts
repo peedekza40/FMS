@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ListPage } from '../list/list';
+import { HomePage } from '../home/home';
+
 
 /**
  * Generated class for the ReportPage page.
@@ -14,6 +17,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'report.html',
 })
 export class ReportPage {
+
+  tab1Root = HomePage;
+  tab2Root = ListPage;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

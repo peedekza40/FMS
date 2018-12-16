@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { IncomeReportPage } from '../income-report/income-report';
+import { IncomeManagePage } from '../income-manage/income-manage';
 import { PaymentReportPage } from '../payment-report/payment-report';
 import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-income';
 /**
@@ -18,7 +18,7 @@ import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-
 export class TmanagePage implements OnInit {
   income_report: Report_inc[];
 
-  tab2Root = IncomeReportPage;
+  tab2Root = IncomeManagePage;
   tab3Root = PaymentReportPage;
   constructor(public navCtrl: NavController, public navParams: NavParams, public MReportIncomeProvider: MReportIncomeProvider) {
   }
@@ -27,19 +27,19 @@ export class TmanagePage implements OnInit {
     console.log('ionViewDidLoad TmanagePage');
   }
   ngOnInit() {
-    this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
-      console.log(response);
-      this.income_report = response;
-    });
+    // this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
+    //   console.log(response);
+    //   this.income_report = response;
+    // });
   } 
 
-  removeObjs(objs) {
-    objs.forEach((element, index) => {
-      if (element == objs) {
-        objs.splice(index, 1);
-      }
-    });
-  }
+  // removeObjs(objs) {
+  //   objs.forEach((element, index) => {
+  //     if (element == objs) {
+  //       objs.splice(index, 1);
+  //     }
+  //   });
+  // }
 }
 interface Report_inc{
   inc_code: string;

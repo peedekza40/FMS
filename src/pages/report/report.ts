@@ -24,8 +24,15 @@ export class ReportPage implements OnInit{
   tab2Root = IncomeReportPage;
   tab3Root = PaymentReportPage;
 
+  private bac_id:number;
+  private start_date:string;
+  private end_date:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl:ModalController) {
+    this.bac_id = this.navParams.get('sd_bac_id');
+    this.start_date = this.navParams.get('sd_s_date');
+    this.end_date = this.navParams.get('sd_e_date');
+    console.log('bacId: '+this.bac_id + ', s_data: '+this.start_date+', e_data: '+this.end_date);
   }
 
   ngOnInit() {

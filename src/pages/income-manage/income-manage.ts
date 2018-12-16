@@ -26,7 +26,7 @@ export class IncomeManagePage implements OnInit {
   ngOnInit() {
     this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
       this.income_report = response;
-      console.log(this.income_report);
+      console.log(response);
     });
   } 
   removeObjs(objs) {

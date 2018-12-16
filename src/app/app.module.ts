@@ -15,6 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SummarizeReportPage } from '../pages/summarize-report/summarize-report';
 import { IncomeReportPage } from '../pages/income-report/income-report';
 import { PaymentReportPage } from '../pages/payment-report/payment-report';
+import { IncomeManagePage } from '../pages/income-manage/income-manage';
 import { MReportIncomeProvider } from '../providers/m-report-income/m-report-income';
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MReportIncomeProvider } from '../providers/m-report-income/m-report-inc
     TmanagePage,
     SummarizeReportPage,
     IncomeReportPage,
-    PaymentReportPage
+    PaymentReportPage,
+    IncomeManagePage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { MReportIncomeProvider } from '../providers/m-report-income/m-report-inc
     TmanagePage,
     SummarizeReportPage,
     IncomeReportPage,
-    PaymentReportPage
+    PaymentReportPage,
+    IncomeManagePage
   ],
   providers: [
     StatusBar,

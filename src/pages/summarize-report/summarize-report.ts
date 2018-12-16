@@ -85,7 +85,16 @@ export class SummarizeReportPage {
 
   get_sum(){
     var sum_total = 0;
-    
+    var y =0;
+    for (let i=0; i<this.details.length; i++) {
+      if(this.details[i].type == 'income'){
+        y = +(this.details[i].amount);
+        sum_total += y;
+      }else if(this.details[i].type == 'payment'){
+        y = +(this.details[i].amount);
+        sum_total -= y;
+      }
+    }
       return sum_total;
       
   }

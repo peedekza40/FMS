@@ -14,12 +14,25 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   templateUrl: 'modalssearch.html',
 })
 export class ModalssearchPage {
-
+  private bac_id:number;
+  private start_date:string;
+  private end_date:string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalssearchPage');
+  }
+
+  inputPost(b_id,s_d,e_d){
+    this.bac_id = b_id;
+    this.start_date = s_d;
+    this.end_date = e_d;
+
+    console.log('BankAccount : ' + this.bac_id);
+    console.log('Start_date : ' + this.start_date);
+    console.log('End_date : ' + this.end_date);
+    this.dismiss();
   }
 
   dismiss() {

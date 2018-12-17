@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the IncomeManagePage page.
@@ -17,7 +18,7 @@ import { MReportIncomeProvider } from '../../../providers/m-report-income/m-repo
 export class IncomeManagePage implements OnInit {
   income_report: Report_inc[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,  public MReportIncomeProvider: MReportIncomeProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController , public MReportIncomeProvider: MReportIncomeProvider) {
   }
 
   ionViewDidLoad() {
@@ -29,15 +30,71 @@ export class IncomeManagePage implements OnInit {
       console.log(response);
     });
   } 
-  removeObjs(objs) {
-    objs.forEach((element, index) => {
-      if (element == objs) {
-        objs.splice(index, 1);
-      }
+  // removeObjs_income(objs_i) {
+  //   this.income_report.forEach((element, index) => {
+  //     if (element == objs_i) {
+  //       this.income_report.splice(index, 1);
+  //     }
+  //   });
+  // }
+
+  // Edit show_alert_del
+  show_alert_del(objs_i){
+    const confirm = this.alertCtrl.create({
+      title: 'ลบรายการบัญชี',
+      message: 'ต้องการลบรายการบัญชีหรือไม่',
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'ยืนยัน',
+          handler: () => {
+            this.income_report.forEach((element, index) => {
+                   if (element == objs_i) {
+                     this.income_report.splice(index, 1);
+                  }
+            });
+            console.log('Agree clicked');
+          }
+        }
+      ]
     });
+    confirm.present();
+  }
+  // Edit show_alert_edit
+  show_alert_edit(objs_i){
+    const confirm = this.alertCtrl.create({
+      title: 'แก้ไขรายการบัญชี',
+      message: 'ต้องการแก้ไขบัญชีหรือไม่',
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'ยืนยัน',
+          handler: () => {
+            this.income_report.forEach((element, index) => {
+                   if (element == objs_i) {
+                     this.income_report.splice(index, 1);
+                  }
+            });
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 
 }
+
 
 interface Report_inc{
   inc_code: string;

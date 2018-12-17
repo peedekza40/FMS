@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-
-/**
- * Generated class for the ModalssearchPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ReportPage } from '../report/report';
 
 @IonicPage()
 @Component({
@@ -24,43 +18,40 @@ export class ModalssearchPage {
     console.log('ionViewDidLoad ModalssearchPage');
   }
 
+  /* post function */
   inputPost(b_id,s_d,e_d){
-    if(b_id != null){
+
+    /* post value Null check */
+    if(b_id == ''){
       this.bac_id = 0;
     }else{
       this.bac_id = b_id;
     }
 
-    if(s_d != null){
-      this.start_date = '';
+    if(s_d == ''){
+      this.start_date = 'today';
     }else{
       this.start_date = s_d;
     }
 
-    if(e_d != null){
-      this.end_date = '';
+    if(e_d == ''){
+      this.end_date = 'today';
     }else{
       this.end_date = e_d;
     }
-   
 
-    // console.log('BankAccount : ' + this.bac_id);
-    // console.log('Start_date : ' + this.start_date);
-    // console.log('End_date : ' + this.end_date);
-
-    // this.navCtrl.push(ReportPage, {
-    //   sd_bac_id: this.bac_id,
-    //   sd_s_date: this.start_date,
-    //   sd_e_date: this.end_date
-    // });
-    let search_data = {
+    /* push data to report page */
+    this.navCtrl.push(ReportPage, {
       sd_bac_id: this.bac_id,
       sd_s_date: this.start_date,
       sd_e_date: this.end_date
-    };
-    this.viewCtrl.dismiss(search_data);
+    });
+
+    /* close modal */
+    this.modaldismiss();
   }
 
+  /* close modal */
   modaldismiss() {
     this.viewCtrl.dismiss();
   }

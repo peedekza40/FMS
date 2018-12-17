@@ -25,9 +25,11 @@ export class IncomeReportPage {
   }
 
   ionViewDidLoad() {
-    this.reportDataSearch.bac_id = this.bac_id;
-    this.reportDataSearch.start_date = this.start_date;
-    this.reportDataSearch.end_date = this.end_date;
+    /* set attribute  */
+    this.bac_id = this.reportDataSearch.bac_id;
+    this.start_date = this.reportDataSearch.start_date;
+    this.end_date = this.reportDataSearch.end_date;
+    
     console.log(this.bac_id);
     console.log(this.start_date);
     console.log(this.end_date);

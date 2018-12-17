@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { IncomeManagePage } from '../income-manage/income-manage';
-import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
+import { PaymentManagePage } from '../payment-manage/payment-manage';
 /**
  * Generated class for the TmanagePage page.
  *
@@ -17,8 +17,8 @@ import { MReportIncomeProvider } from '../../../providers/m-report-income/m-repo
 export class TmanagePage implements OnInit {
 
   tab2Root = IncomeManagePage;
-  tab3Root = '';
-  constructor(public navCtrl: NavController, public navParams: NavParams, public MReportIncomeProvider: MReportIncomeProvider) {
+  tab3Root = PaymentManagePage;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

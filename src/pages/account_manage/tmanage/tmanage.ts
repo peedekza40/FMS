@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IncomeManagePage } from '../income-manage/income-manage';
+import { PaymentManagePage } from '../payment-manage/payment-manage';
 /**
  * Generated class for the TmanagePage page.
  *
@@ -13,13 +14,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-tmanage',
   templateUrl: 'tmanage.html',
 })
-export class TmanagePage {
+export class TmanagePage implements OnInit {
 
+  tab2Root = IncomeManagePage;
+  tab3Root = PaymentManagePage;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TmanagePage');
   }
+  ngOnInit() {
+  } 
 
 }

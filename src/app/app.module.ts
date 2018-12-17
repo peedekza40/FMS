@@ -13,10 +13,12 @@ import { SummarizeReportPage } from '../pages/summarize-report/summarize-report'
 import { IncomeReportPage } from '../pages/income-report/income-report';
 import { PaymentReportPage } from '../pages/payment-report/payment-report';
 import { IncomeManagePage } from '../pages/account_manage/income-manage/income-manage';
+import { PaymentManagePage } from '../pages/account_manage/payment-manage/payment-manage';
 /*------------------------------providers------------------------------*/
 import { MReportIncomeProvider } from '../providers/m-report-income/m-report-income';
 import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen'; 
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-payment'; 
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SummarizeReportPage,
     IncomeReportPage,
     PaymentReportPage,
-    IncomeManagePage
+    IncomeManagePage,
+    PaymentManagePage
   ],
   imports: [
     BrowserModule,
@@ -44,13 +47,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SummarizeReportPage,
     IncomeReportPage,
     PaymentReportPage,
-    IncomeManagePage
+    IncomeManagePage,
+    PaymentManagePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MReportIncomeProvider
+    MReportIncomeProvider,
+    MReportPaymentProvider
   ]
 })
 export class AppModule {}

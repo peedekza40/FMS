@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-income';
+import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
 
 /**
  * Generated class for the IncomeManagePage page.

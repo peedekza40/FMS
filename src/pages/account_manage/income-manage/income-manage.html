@@ -5,6 +5,19 @@
   Ionic pages and navigation.
 -->
 <ion-content padding>
+    <!-- Header table -->       
+    <ion-row>
+        <ion-col size="1" >
+                <h1 style="font-size: 18px; text-align: center;"><b>ตารางลงรายการบัญชีรายรับ-รายจ่าย</b></h1>
+        </ion-col>
+    </ion-row>     
+    <ion-row>
+                <ion-item>   
+                        <ion-label   style="font-size: 13px; text-align: left;">รายละเอียด</ion-label>
+                        <ion-label  style="font-size: 13px;  text-align: center;">คำอธิบายรายการ</ion-label>
+                        <ion-label  style="font-size: 13px;  text-align: right;">จำนวนเงิน</ion-label>
+                    </ion-item>
+    </ion-row>
    <!-- Data -->
    <ion-list>
     <ion-item-sliding *ngFor="let objs of income_report; let i = index">

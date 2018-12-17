@@ -7,7 +7,6 @@ import {FormsModule} from '@angular/forms';
 /*------------------------------pages------------------------------*/
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { TmanagePage } from '../pages/account_manage/tmanage/tmanage'; 
 import { ReportPage } from '../pages/report/report';
 import { SummarizeReportPage } from '../pages/summarize-report/summarize-report';
@@ -23,7 +22,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     ReportPage,
     TmanagePage,
     SummarizeReportPage,
@@ -41,7 +39,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     ReportPage,
     TmanagePage,
     SummarizeReportPage,

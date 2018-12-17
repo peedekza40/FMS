@@ -1,0 +1,61 @@
+<!--
+  Generated template for the EditModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>editModal</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-label float-right>แก้ไขรายการบัญชี</ion-label>
+        <ion-list *ngFor="let obj of inc_obj">
+          <ion-item>
+            <ion-label stacked>เลขที่รายการบัญชี</ion-label>
+            <ion-input type="text" [(ngModel)]="obj.inc_code"></ion-input> <!--[(ngModel)]="inc_obj"-->
+          </ion-item>
+        
+          <ion-item>
+            <ion-label stacked>เลขที่บัญชี</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label stacked>เลือกบัญชีธนาคาร</ion-label>
+            <ion-select>
+                <ion-option *ngFor="let bankacc_opt of bankacc_obj;">{{bankacc_opt.bacName}}</ion-option>
+            </ion-select>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label stacked>เล่มที่ใบเสร็จ</ion-label>
+            <ion-input type="text" [(ngModel)]="obj.inc_receipt"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label stacked>เลขที่ใบเสร็จ</ion-label>
+            <ion-input type="text" [(ngModel)]="obj.inc_receipt_code"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label stacked>คำอธิบาย</ion-label>
+            <ion-select>
+              <ion-option *ngFor="let desc_opt of desc_obj;">{{desc_opt.desc_description}}</ion-option>
+            </ion-select>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label stacked>จำนวนงิน</ion-label>
+            <ion-input type="number" [(ngModel)]="obj.inc_amount"></ion-input>
+          </ion-item>
+        </ion-list>
+      
+      <button ion-button color="light" navPop>ยกลิก</button>
+      <button ion-button float-right>ยืนยัน</button>
+</ion-content>

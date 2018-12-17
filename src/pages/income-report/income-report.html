@@ -10,13 +10,13 @@
 </ion-header>
 -->
 
-<ion-content padding>
+<ion-content padding> 
     <ion-list>
       <ion-item> <ion-label text-left><b>รายละเอียด</b></ion-label><ion-label text-Right><b>จำนวนเงิน</b></ion-label> </ion-item>
-        <ion-item-sliding *ngFor ="let detail of details ; let i = index">
+        <ion-item-sliding *ngFor="let objs of report_income; let i = index">
           <ion-item>
-           <ion-label text-left><p ion-text color="dark" style="font-size:18px;">{{detail.code}}</p><h5 ion-text color="gray" style="font-size:15px;">{{detail.date}}</h5></ion-label>
-           <ion-label text-right *ngIf=" detail.type == 'income'"ion-text color="secondary">+ {{detail.amount}}</ion-label>
+           <ion-label text-left><p ion-text color="dark" style="font-size:18px;">{{objs.inc_date}}</p><h5 ion-text color="gray" style="font-size:15px;">{{objs.inc_code}}</h5></ion-label>
+           <ion-label text-right >+ {{objs.inc_amount}}</ion-label>
           </ion-item>
           <ion-item-options side="right">
               <button ion-button color="danger" (click)="delete(item)">ลบข้อมูล</button>
@@ -26,6 +26,6 @@
         </ion-item-options>
         </ion-item-sliding>
       </ion-list>
-      <ion-item > <ion-label text-right style="font-size:16px;"> รวม  {{get_sum()}}  </ion-label></ion-item>
+      <ion-item > <ion-label text-right style="font-size:16px;"> รวม <!-- {{get_sum()}} --> </ion-label></ion-item>
       
 </ion-content>

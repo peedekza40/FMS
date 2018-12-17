@@ -8,7 +8,6 @@ import {FormsModule} from '@angular/forms';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TmanagePage } from '../pages/account_manage/tmanage/tmanage'; 
-import { ReportPage } from '../pages/report/report';
 import { SummarizeReportPage } from '../pages/summarize-report/summarize-report';
 import { IncomeReportPage } from '../pages/income-report/income-report';
 import { PaymentReportPage } from '../pages/payment-report/payment-report';
@@ -24,7 +23,6 @@ import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-p
   declarations: [
     MyApp,
     HomePage,
-    ReportPage,
     TmanagePage,
     SummarizeReportPage,
     IncomeReportPage,
@@ -42,7 +40,6 @@ import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-p
   entryComponents: [
     MyApp,
     HomePage,
-    ReportPage,
     TmanagePage,
     SummarizeReportPage,
     IncomeReportPage,

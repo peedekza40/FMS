@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-income';
 
 /**
  * Generated class for the IncomeReportPage page.
@@ -13,66 +14,42 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-income-report',
   templateUrl: 'income-report.html',
 })
-export class IncomeReportPage {
-  details : Array <any> = [];
+export class IncomeReportPage implements OnInit{
+  report_income:Report_income[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.details = [
-                    {
-                      "code" : "RE61100021",
-                      "date" : "01-10-2561",
-                      "type" : "income",
-                      "amount" : "250"
-                    },
-                    {
-                      "code" : "RE61100022",
-                      "date" : "01-10-2561",
-                      "type" : "income",
-                      "amount" : "120"
-                    },
-                    {
-                      "code" : "RE61100023",
-                      "date" : "01-10-2561",
-                      "type" : "income",
-                      "amount" : "400"
-                    },
-                    {
-                      "code" : "RE61100024",
-                      "date" : "01-10-2561",
-                      "type" : "income",
-                      "amount" : "190"
-                    },
-                    {
-                      "code" : "RE61100025",
-                      "date" : "01-10-2561",
-                      "type" : "income",
-                      "amount" : "30"
-                    },
-                    {
-                      "code" : "RE61100026",
-                      "date" : "01-10-2561",
-                      "type" : "income",
-                      "amount" : "200"
-                    }
-                  ]
-
-                } 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public MReportIncomeProvider: MReportIncomeProvider) {
+  } 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad IncomeReportPage');
   }
 
-  get_sum(){
+  ngOnInit() {
+    this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
+      this.report_income = response;
+      console.log(this.report_income[1].inc_amount);
+    });
+  }
+
+
+  /*get_sum(){
     var sum_total = 0;
     var y =0;
-    for (let i=0; i<this.details.length; i++) {
-      y = +(this.details[i].amount);
+    for (let i=0; i<this.report_income.length; i++) {
+      y = +(this.report_income[i].inc_amount);
       sum_total += y;
     }
-      console.log(this.details[0].amount);
+      console.log(this.report_income[0].inc_amount);
       return sum_total;
       
-  }
+  }*/
   
 
+}
+interface Report_income{
+  bacName: string;
+  inc_date: Date;
+  inc_code : string;
+  desc_description: string;
+  inc_amount: number;
 }

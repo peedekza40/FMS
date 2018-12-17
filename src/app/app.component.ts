@@ -25,7 +25,7 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
-      { title: 'Report', component: ReportPage  },
+      { title: 'รายงานรายการบัญชี', component: ReportPage  },
       { title: 'ตารางลงรายการบัญชี', component: TmanagePage  },
     ];
 

@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NgForOf } from '@angular/common';
 import { defaultIterableDiffers } from '@angular/core/src/change_detection/change_detection';
 import { AlertController } from 'ionic-angular';
+import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-income';
+
 /**
  * Generated class for the SummarizeReportPage page.
  *
@@ -15,90 +17,34 @@ import { AlertController } from 'ionic-angular';
   selector: 'page-summarize-report',
   templateUrl: 'summarize-report.html', 
 })
-export class SummarizeReportPage {
-
-  details : Array <any> = [];
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
-    this.details = [
-                    {
-                      "code" : "RE61100021",
-                      "date" : "01-10-2561",
-                      "type" : "income",
-                      "amount" : "250.00"
-                    },
-                    {
-                      "code" : "RE61100022",
-                      "date" : "01-10-2561",
-                      "type" : "income",
-                      "amount" : "120.00"
-                    },
-                    {
-                      "code" : "PA61100022",
-                      "date" : "01-10-2561",
-                      "type" : "payment",
-                      "amount" : "500.00"
-                    },
-                    {
-                      "code" : "RE61100023",
-                      "date" : "01-10-2561",
-                      "type" : "income",
-                      "amount" : "400.00"
-                    },
-                    {
-                      "code" : "PA61100020",
-                      "date" : "01-10-2561",
-                      "type" : "payment",
-                      "amount" : "140.00"
-                    },
-                    {
-                      "code" : "RE61100024",
-                      "date" : "01-10-2561",
-                      "type" : "income",
-                      "amount" : "190.00"
-                    },
-                    {
-                      "code" : "PA61100021",
-                      "date" : "01-10-2561",
-                      "type" : "payment",
-                      "amount" : "210.00"
-                    },
-                    {
-                      "code" : "RE61100025",
-                      "date" : "01-10-2561",
-                      "type" : "income",
-                      "amount" : "30.00"
-                    },
-                    {
-                      "code" : "RE61100026",
-                      "date" : "01-10-2561",
-                      "type" : "income",
-                      "amount" : "200.00"
-                    }
-                  ]
-
-                } 
-
+export class SummarizeReportPage implements OnInit{
+  income_report: Report_inc[]; 
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,  public MReportIncomeProvider: MReportIncomeProvider) {
+  }
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad SummarizeReportPage');
   }
+  
+  ngOnInit(){
+    this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
+      this.income_report = response;
+      console.log(response);
+    });
+  }
 
-  get_sum(){
+  get_sum_income(){
     var sum_total = 0;
     var y =0;
-    for (let i=0; i<this.details.length; i++) {
-      if(this.details[i].type == 'income'){
-        y = +(this.details[i].amount);
+    for (let i=0; i<this.income_report.length; i++) {
+        y = +(this.income_report[i].inc_amount);
         sum_total += y;
-      }else if(this.details[i].type == 'payment'){
-        y = +(this.details[i].amount);
-        sum_total -= y;
-      }
     }
       return sum_total.toFixed(2);
   }
 
-  show_alert_del(detail){
+  show_alert_del(obj){
     const confirm = this.alertCtrl.create({
       title: 'ลบรายการบัญชี',
       message: 'ต้องการลบรายการบัญชี?',
@@ -112,9 +58,9 @@ export class SummarizeReportPage {
         {
           text: 'ยืนยัน',
           handler: () => {
-            this.details.forEach((element, index) => {
-              if (element == detail) {
-              this.details.splice(index,1);
+            obj.forEach((element, index) => {
+              if (element == obj) {
+                obj.splice(index,1);
               }
             });
             console.log('Agree clicked');
@@ -125,7 +71,12 @@ export class SummarizeReportPage {
     confirm.present();
   }
 
-  show_info(){
-
-  }
 }
+    interface Report_inc{
+      inc_code: string;
+      desc_description: string;
+      inc_amount: number;
+      inc_date: string;
+    }
+
+

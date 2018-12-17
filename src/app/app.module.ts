@@ -16,6 +16,7 @@ import { SummarizeReportPage } from '../pages/summarize-report/summarize-report'
 import { IncomeReportPage } from '../pages/income-report/income-report';
 import { PaymentReportPage } from '../pages/payment-report/payment-report';
 import { ModalssearchPage } from '../pages/modalssearch/modalssearch';
+import { ReportDataTranferProvider } from '../providers/report-data-tranfer/report-data-tranfer';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ModalssearchPage } from '../pages/modalssearch/modalssearch';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ReportDataTranferProvider
   ]
 })
 export class AppModule {}

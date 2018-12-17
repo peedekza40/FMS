@@ -1,15 +1,18 @@
 
 <ion-header>
-      <ion-toolbar color="primary">
+      <!-- <ion-toolbar color="primary">
           <button ion-button menuToggle slot="start">
               <ion-icon name="menu"></ion-icon>
             </button>
           <ion-title text-center>
             <b style="color:white; font-size: 30px" >FMS</b>
           </ion-title>
+<<<<<<< HEAD:src/pages/tmanage/tmanage.html
     </ion-toolbar>
+=======
+    </ion-toolbar> -->
+>>>>>>> origin/master:src/pages/account_manage/tmanage/tmanage.html
 </ion-header>
-
 <ion-content padding>
   
         <ion-row>
@@ -18,10 +21,10 @@
                         <ion-tab [root]="tab3Root" tabTitle="รายจ่าย" ></ion-tab>
              </ion-tabs>
         </ion-row>
-         <br><br><br>    
+         <br><br><br>
          <!-- Header table -->       
          <ion-row>
-             <ion-col size="1" >
+             <ion-col size="1" style="background-color: white;">
                     <h1 style="font-size: 18px; text-align: center;"><b>ตารางลงรายการบัญชีรายรับ-รายจ่าย</b></h1>
              </ion-col>
          </ion-row>     
@@ -32,28 +35,5 @@
                             <ion-label  style="font-size: 13px;  text-align: right;"><b>จำนวนเงิน</b></ion-label>
                         </ion-item>
          </ion-row>
-                    
-
-     <!-- Data -->
-     <ion-list>
-            <ion-item-sliding *ngFor="let objs of income_report; let i = index">
-              <ion-item>
-                    <ion-label style="font-size: 12px;  text-align: left;">{{objs.inc_code}}</ion-label>
-                    <ion-label style="font-size: 12px;  text-align: center;">{{objs.desc_description}}</ion-label>
-                    <ion-label style="font-size: 12px;  text-align: right;">{{objs.inc_amount}}</ion-label> 
-              </ion-item>
-              <ion-item-options side="left"> <!-- Slide bar edit -->
-                <button ion-button color="primary">
-                  <ion-icon name="edit"></ion-icon>
-                  แก้ไขข้อมูล
-                </button>
-              </ion-item-options>
-              <ion-item-options side="right"> <!-- Slide bar delete -->
-                <button ion-button color="danger" (click)="removeObjs(objs)">
-                  <ion-icon name="delete"></ion-icon>
-                  ลบข้อมูล
-                </button>
-              </ion-item-options>
-            </ion-item-sliding>
-          </ion-list>
+                <!-- Data -->
 </ion-content>

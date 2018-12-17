@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { IncomeReportPage } from '../income-report/income-report';
-import { PaymentReportPage } from '../payment-report/payment-report';
-import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-income';
+import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
+
 /**
- * Generated class for the TmanagePage page.
+ * Generated class for the IncomeManagePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,27 +11,24 @@ import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-
 
 @IonicPage()
 @Component({
-  selector: 'page-tmanage',
-  templateUrl: 'tmanage.html',
+  selector: 'page-income-manage',
+  templateUrl: 'income-manage.html',
 })
-export class TmanagePage implements OnInit {
+export class IncomeManagePage implements OnInit {
   income_report: Report_inc[];
 
-  tab2Root = IncomeReportPage;
-  tab3Root = PaymentReportPage;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public MReportIncomeProvider: MReportIncomeProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public MReportIncomeProvider: MReportIncomeProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TmanagePage');
+    console.log('ionViewDidLoad IncomeManagePage');
   }
   ngOnInit() {
     this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
-      console.log(response);
       this.income_report = response;
+      console.log(response);
     });
   } 
-
   removeObjs(objs) {
     objs.forEach((element, index) => {
       if (element == objs) {
@@ -40,7 +36,9 @@ export class TmanagePage implements OnInit {
       }
     });
   }
+
 }
+
 interface Report_inc{
   inc_code: string;
   desc_description: string;

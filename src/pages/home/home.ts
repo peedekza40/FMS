@@ -9,7 +9,7 @@ import { hasLifecycleHook } from '@angular/compiler/src/lifecycle_reflector';
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
-
+ 
   }
 
 }

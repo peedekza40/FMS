@@ -26,7 +26,7 @@ import { MReportIncomeProvider } from '../providers/m-report-income/m-report-inc
     TmanagePage,
     SummarizeReportPage,
     IncomeReportPage,
-    PaymentReportPage
+    PaymentReportPage,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +43,7 @@ import { MReportIncomeProvider } from '../providers/m-report-income/m-report-inc
     TmanagePage,
     SummarizeReportPage,
     IncomeReportPage,
-    PaymentReportPage
+    PaymentReportPage,
   ],
   providers: [
     StatusBar,

@@ -15,7 +15,7 @@ import { PaymentManagePage } from '../payment-manage/payment-manage';
   templateUrl: 'tmanage.html',
 })
 export class TmanagePage implements OnInit {
-
+  
   tab2Root = IncomeManagePage;
   tab3Root = PaymentManagePage;
   constructor(public navCtrl: NavController, public navParams: NavParams) {

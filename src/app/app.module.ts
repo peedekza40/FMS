@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TmanagePage } from '../pages/account_manage/tmanage/tmanage'; 
+import { AddAccountPage } from '../pages/account_manage/add-account/add-account'; 
 import { ReportPage } from '../pages/report/report';
 import { SummarizeReportPage } from '../pages/summarize-report/summarize-report';
 import { IncomeReportPage } from '../pages/income-report/income-report';
@@ -16,9 +17,9 @@ import { IncomeManagePage } from '../pages/account_manage/income-manage/income-m
 import { PaymentManagePage } from '../pages/account_manage/payment-manage/payment-manage';
 /*------------------------------providers------------------------------*/
 import { MReportIncomeProvider } from '../providers/m-report-income/m-report-income';
+import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-payment'; 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-payment'; 
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-p
     IncomeReportPage,
     PaymentReportPage,
     IncomeManagePage,
-    PaymentManagePage
+    PaymentManagePage,
+    AddAccountPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-p
     IncomeReportPage,
     PaymentReportPage,
     IncomeManagePage,
-    PaymentManagePage
+    PaymentManagePage,
+    AddAccountPage
   ],
   providers: [
     StatusBar,

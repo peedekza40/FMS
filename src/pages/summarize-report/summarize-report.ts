@@ -4,6 +4,7 @@ import { NgForOf } from '@angular/common';
 import { defaultIterableDiffers } from '@angular/core/src/change_detection/change_detection';
 import { AlertController } from 'ionic-angular';
 import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-income';
+import { MReportPaymentProvider } from '../../providers/m-report-payment/m-report-payment';
 
 /**
  * Generated class for the SummarizeReportPage page.
@@ -19,8 +20,9 @@ import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-
 })
 export class SummarizeReportPage implements OnInit{
   income_report: Report_inc[]; 
+  payment_report: Report_pay[]; 
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,  public MReportIncomeProvider: MReportIncomeProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,  public MReportIncomeProvider: MReportIncomeProvider , public MReportPaymentProvider: MReportPaymentProvider) {
   }
   
   ionViewDidLoad() {
@@ -30,6 +32,10 @@ export class SummarizeReportPage implements OnInit{
   ngOnInit(){
     this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
       this.income_report = response;
+      console.log(response);
+    });
+    this.MReportPaymentProvider.get_by_pay_date().subscribe((response) => {
+      this.payment_report = response;
       console.log(response);
     });
   }
@@ -77,6 +83,12 @@ export class SummarizeReportPage implements OnInit{
       desc_description: string;
       inc_amount: number;
       inc_date: string;
+    }
+    interface Report_pay{
+      pay_code: string;
+      desc_description: string;
+      pay_amount: number;
+      pay_date: string;
     }
 
 

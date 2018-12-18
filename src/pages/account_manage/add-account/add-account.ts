@@ -14,6 +14,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'add-account.html',
 })
 export class AddAccountPage {
+  
+  public todo = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -22,4 +24,7 @@ export class AddAccountPage {
     console.log('ionViewDidLoad AddAccountPage');
   }
 
+  logForm() {
+    
+  }
 }

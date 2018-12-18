@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ReportPage } from '../pages/report/report';
 import { TmanagePage } from '../pages/account_manage/tmanage/tmanage'; 
+import { AddAccountPage } from '../pages/account_manage/add-account/add-account'; 
 
 @Component({
   templateUrl: 'app.html'
@@ -25,6 +26,7 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Report', component: ReportPage  },
       { title: 'ตารางลงรายการบัญชี', component: TmanagePage  },
+      { title: 'add_account', component: AddAccountPage }
     ];
 
   }

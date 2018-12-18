@@ -33,10 +33,6 @@ import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-p
     PaymentReportPage,
     IncomeManagePage,
     PaymentManagePage,
-<<<<<<< HEAD
-    EditModalPage
-=======
->>>>>>> origin/shit
   ],
   imports: [
     BrowserModule,
@@ -55,24 +51,15 @@ import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-p
     PaymentReportPage,
     IncomeManagePage,
     PaymentManagePage,
-<<<<<<< HEAD
-    EditModalPage
-=======
->>>>>>> origin/shit
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MReportIncomeProvider,
-<<<<<<< HEAD
-    MReportPaymentProvider
-
-=======
     MDescriptionProvider,
     MBankaccountProvider,
     MReportPaymentProvider
->>>>>>> origin/shit
   ]
 })
 export class AppModule {}

@@ -45,6 +45,7 @@ export class IncomeManagePage implements OnInit {
     const myModal = this.editModal.create('EditModalPage', {inc_id:id});
     myModal.present();
   }
+  
 
 }
 

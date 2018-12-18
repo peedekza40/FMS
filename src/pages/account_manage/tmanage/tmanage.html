@@ -1,34 +1,60 @@
-
 <ion-header>
-      <!-- <ion-toolbar color="primary">
-          <button ion-button menuToggle slot="start">
-              <ion-icon name="menu"></ion-icon>
-            </button>
-          <ion-title text-center>
-            <b style="color:white; font-size: 30px" >FMS</b>
-          </ion-title>
-    </ion-toolbar> -->
-</ion-header>
-<ion-content padding>
-        <ion-row>
-                <ion-tabs selectedIndex="0" tabsPlacement="top" color="primary">
-                        <ion-tab [root]="tab2Root" tabTitle="รายรับ" ></ion-tab>
-                        <ion-tab [root]="tab3Root" tabTitle="รายจ่าย" ></ion-tab>
-             </ion-tabs>
-        </ion-row>
-         <br><br><br>
-         <!-- Header table -->       
-         <ion-row>
-             <ion-col size="1" style="background-color: white;">
-                    <h1 style="font-size: 18px; text-align: center;"><b>ตารางลงรายการบัญชีรายรับ-รายจ่าย</b></h1>
-             </ion-col>
-         </ion-row>     
-         <ion-row>
-                    <ion-item>   
-                            <ion-label   style="font-size: 13px; text-align: left;">รายละเอียด</ion-label>
-                            <ion-label  style="font-size: 13px;  text-align: center;">คำอธิบายรายการ</ion-label>
-                            <ion-label  style="font-size: 13px;  text-align: right;">จำนวนเงิน</ion-label>
-                        </ion-item>
-         </ion-row>
-                <!-- Data -->
-</ion-content>
+    <!--
+      <ion-toolbar color="primary">
+            <button ion-button menuToggle slot="start">
+                <ion-icon name="menu"></ion-icon>
+              </button>
+            <ion-title text-center>
+              <b style="color:white; font-size: 30px" >FMS</b>
+            </ion-title>
+      </ion-toolbar>
+    -->
+  </ion-header>
+  <ion-content padding>
+    <ion-row>
+      <ion-tabs selectedIndex="0" tabsPlacement="top" color="primary">
+        <ion-tab [root]="tab2Root" tabTitle="รายรับ"></ion-tab>
+        <ion-tab [root]="tab3Root" tabTitle="รายจ่าย"></ion-tab>
+      </ion-tabs>
+    </ion-row>
+    <p style="background-color:white;">&nbsp;&nbsp;</p>
+    <!-- Header table -->
+    <ion-row>
+      <ion-toolbar>
+        <ion-item padding>
+          <ion-label
+            ><ion-icon name="search">
+              เลือกวันที่ต้องการค้นหา</ion-icon
+            ></ion-label
+          >
+          <ion-datetime
+            displayFormat="MM/DD/YYYY"
+            [(ngModel)]="myDate"
+            (ngModelChange)="testdate()"
+          >
+          </ion-datetime>
+        </ion-item>
+      </ion-toolbar>
+      <br /><br />
+      <ion-col size="1" style="background-color: white;">
+        <h1 style="font-size: 18px; text-align: center;">
+          <b>ตารางลงรายการบัญชีรายรับ-รายจ่าย</b>
+        </h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label style="font-size: 13px; text-align: left;"
+          ><b>รายละเอียด</b></ion-label
+        >
+        <ion-label style="font-size: 13px;  text-align: center;"
+          ><b>คำอธิบายรายการ</b></ion-label
+        >
+        <ion-label style="font-size: 13px;  text-align: right;"
+          ><b>จำนวนเงิน</b></ion-label
+        >
+      </ion-item>
+    </ion-row>
+    <!-- Data -->
+  </ion-content>
+  

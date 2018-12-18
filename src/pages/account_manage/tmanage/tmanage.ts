@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { IncomeManagePage } from '../income-manage/income-manage';
 import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
+import { PaymentManagePage } from '../payment-manage/payment-manage';
+import * as moment from 'moment';
 /**
  * Generated class for the TmanagePage page.
  *
@@ -15,10 +17,11 @@ import { MReportIncomeProvider } from '../../../providers/m-report-income/m-repo
   templateUrl: 'tmanage.html',
 })
 export class TmanagePage implements OnInit {
-
+  myDate : string;
   tab2Root = IncomeManagePage;
-  tab3Root = '';
+  tab3Root = PaymentManagePage;
   constructor(public navCtrl: NavController, public navParams: NavParams, public MReportIncomeProvider: MReportIncomeProvider) {
+    this.myDate = moment(new Date()).format();
   }
 
   ionViewDidLoad() {
@@ -26,5 +29,8 @@ export class TmanagePage implements OnInit {
   }
   ngOnInit() {
   } 
+  testdate(){
+    console.log(this.myDate);
+  }
 
 }

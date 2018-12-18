@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 /*------------------------------pages------------------------------*/
 import { MyApp } from './app.component';
@@ -14,12 +14,13 @@ import { IncomeReportPage } from '../pages/income-report/income-report';
 import { PaymentReportPage } from '../pages/payment-report/payment-report';
 import { IncomeManagePage } from '../pages/account_manage/income-manage/income-manage';
 import { PaymentManagePage } from '../pages/account_manage/payment-manage/payment-manage';
-import { EditModalPage } from '../pages/account_manage/edit-modal/edit-modal';
 /*------------------------------providers------------------------------*/
 import { MReportIncomeProvider } from '../providers/m-report-income/m-report-income';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-payment'; 
+import { MDescriptionProvider } from '../providers/m-description/m-description';
+import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
+import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-payment';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,10 @@ import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-p
     PaymentReportPage,
     IncomeManagePage,
     PaymentManagePage,
+<<<<<<< HEAD
     EditModalPage
+=======
+>>>>>>> origin/shit
   ],
   imports: [
     BrowserModule,
@@ -51,15 +55,24 @@ import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-p
     PaymentReportPage,
     IncomeManagePage,
     PaymentManagePage,
+<<<<<<< HEAD
     EditModalPage
+=======
+>>>>>>> origin/shit
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MReportIncomeProvider,
+<<<<<<< HEAD
     MReportPaymentProvider
 
+=======
+    MDescriptionProvider,
+    MBankaccountProvider,
+    MReportPaymentProvider
+>>>>>>> origin/shit
   ]
 })
 export class AppModule {}

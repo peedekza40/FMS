@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { IncomeManagePage } from '../income-manage/income-manage';
+<<<<<<< HEAD
+=======
+import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
+>>>>>>> origin/shit
 import { PaymentManagePage } from '../payment-manage/payment-manage';
 import * as moment from 'moment';
 /**
@@ -19,8 +23,13 @@ export class TmanagePage implements OnInit {
   myDate : string;
   tab2Root = IncomeManagePage;
   tab3Root = PaymentManagePage;
+<<<<<<< HEAD
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.myDate = moment(new Date()).format();
+=======
+  constructor(public navCtrl: NavController, public navParams: NavParams, public MReportIncomeProvider: MReportIncomeProvider) {
+    this.myDate = moment(new Date()).format('MMM Do YY');
+>>>>>>> origin/shit
   }
 
   ionViewDidLoad() {
@@ -31,6 +40,9 @@ export class TmanagePage implements OnInit {
   testdate(){
     console.log(this.myDate);
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/shit
 
 }

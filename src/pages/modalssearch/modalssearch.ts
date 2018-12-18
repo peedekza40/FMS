@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 import { ReportPage } from '../report/report';
 import { MBankaccountProvider } from '../../providers/m-bankaccount/m-bankaccount';
 import { ReportDataTranferProvider } from '../../providers/report-data-tranfer/report-data-tranfer';
+import * as moment from 'moment';
 
 @IonicPage()
 @Component({
@@ -11,16 +12,13 @@ import { ReportDataTranferProvider } from '../../providers/report-data-tranfer/r
 })
 export class ModalssearchPage implements OnInit {
   private bac_id:number;
-  private start_date:string ;
+  private start_date:string;
   private end_date:string;
   private Bank_acc_data:Bac_data[];
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private BacData: MBankaccountProvider, private reportDataSearch: ReportDataTranferProvider) {
   }
 
   ngOnInit() {
-    // this.BacData.get_all().subscribe((response) => {
-    //   this.Bank_acc_data = response;
-    // });
   }
 
   ionViewDidLoad() {
@@ -36,22 +34,20 @@ export class ModalssearchPage implements OnInit {
   inputPost(b_id,s_d,e_d){
 
     /* post value Null check */
-    if(b_id == ''){
-      this.bac_id = 0;
-    }else{
+    if(b_id != ''){
       this.bac_id = b_id;
     }
 
     if(s_d == ''){
-      this.start_date = 'today';
+      this.start_date = moment().format('DD-MM-YYYY').toString();
     }else{
-      this.start_date = s_d;
+      this.start_date = moment(s_d).format('DD-MM-YYYY').toString();
     }
 
     if(e_d == ''){
-      this.end_date = 'today';
+      this.end_date = moment().format('DD-MM-YYYY').toString();
     }else{
-      this.end_date = e_d;
+      this.end_date = moment(e_d).format('DD-MM-YYYY').toString();
     }
 
     /* push data to report page */

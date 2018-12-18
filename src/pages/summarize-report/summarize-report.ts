@@ -58,9 +58,9 @@ export class SummarizeReportPage implements OnInit{
         {
           text: 'ยืนยัน',
           handler: () => {
-            obj.forEach((element, index) => {
+            this.income_report.forEach((element, index) => {
               if (element == obj) {
-                obj.splice(index,1);
+                this.income_report.splice(index,1);
               }
             });
             console.log('Agree clicked');

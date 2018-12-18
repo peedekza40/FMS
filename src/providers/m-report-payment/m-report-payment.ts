@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
+import {map} from 'rxjs/operators';
 
 /*
   Generated class for the MReportPaymentProvider provider.
@@ -10,7 +11,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class MReportPaymentProvider {
 
-  constructor(public http: HttpClient) {
+  constructor(public http: Http) {
     console.log('Hello MReportPaymentProvider Provider');
   }
 

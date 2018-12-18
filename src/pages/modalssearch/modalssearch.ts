@@ -1,21 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { ReportPage } from '../report/report';
+import { MBankaccountProvider } from '../../providers/m-bankaccount/m-bankaccount';
 
 @IonicPage()
 @Component({
   selector: 'page-modalssearch',
   templateUrl: 'modalssearch.html',
 })
-export class ModalssearchPage {
+export class ModalssearchPage implements OnInit {
   private bac_id:number;
   private start_date:string ;
   private end_date:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  private Bank_acc_data:Array<any>;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private BacData: MBankaccountProvider) {
+  }
+
+  ngOnInit() {
+    // this.BacData.get_all().subscribe((response) => {
+    //   this.Bank_acc_data = response;
+    // });
   }
 
   ionViewDidLoad() {
+    this.BacData.get_all().subscribe((response) => {
+      this.Bank_acc_data = response;
+      console.log(this.Bank_acc_data);
+    });
     console.log('ionViewDidLoad ModalssearchPage');
+    
   }
 
   /* post function */
@@ -23,7 +37,7 @@ export class ModalssearchPage {
 
     /* post value Null check */
     if(b_id == ''){
-      this.bac_id = 0;
+      this.bac_id = 99;
     }else{
       this.bac_id = b_id;
     }
@@ -48,7 +62,7 @@ export class ModalssearchPage {
     });
 
     /* close modal */
-    this.modaldismiss();
+    this.viewCtrl.dismiss();
   }
 
   /* close modal */
@@ -56,4 +70,9 @@ export class ModalssearchPage {
     this.viewCtrl.dismiss();
   }
 
+}
+
+interface Bac_data{
+  bacId:number;
+  bacName:string;
 }

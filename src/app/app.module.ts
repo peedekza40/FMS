@@ -17,6 +17,7 @@ import { IncomeReportPage } from '../pages/income-report/income-report';
 import { PaymentReportPage } from '../pages/payment-report/payment-report';
 import { ModalssearchPage } from '../pages/modalssearch/modalssearch';
 import { ReportDataTranferProvider } from '../providers/report-data-tranfer/report-data-tranfer';
+import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ReportDataTranferProvider } from '../providers/report-data-tranfer/repo
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ReportDataTranferProvider
+    ReportDataTranferProvider,
+    MBankaccountProvider
   ]
 })
 export class AppModule {}

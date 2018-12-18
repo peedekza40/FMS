@@ -55,6 +55,7 @@ export class ReportPage implements OnInit{
     this.reportDataSearch.start_date = this.start_date;
     this.reportDataSearch.end_date = this.end_date;
     console.log('ionViewDidLoad ReportPage');
+    
   }
 
   async presentModal() {

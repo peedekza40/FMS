@@ -19,16 +19,17 @@ import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-
 export class EditModalPage {
   desc_obj:desc [];
   inc_obj:report_inc [];
-  inc_desc_id : number;
-  
   bankacc_obj:bankacc [];
   inc_id = 0;
+
+  inc_amount_val:number = 0;
   constructor(public navCtrl: NavController, public navParams: NavParams, public view: ViewController, public  MDescriptionProvider: MDescriptionProvider, public MReportIncomeProvider:MReportIncomeProvider, public MBankaccountProvider:MBankaccountProvider) {
   }
 
   ionViewDidLoad() {
     // var inc_id = this.inc_id = this.navParams.get('inc_id');
     // console.log(inc_id);
+    // this.inc_amount_val = this.navParams.get('obj.inc_amount');
   }
 
   ngOnInit() {
@@ -50,6 +51,14 @@ export class EditModalPage {
       
     });
   
+  }
+
+  btnSubmit(){
+    // let edit_data = {
+    //   amount_val:this.navParams.get('obj.inc_amount');
+    // };
+    var amount_val = this.navParams.get('obj.inc_amount');
+    console.log(amount_val);
   }
 
 }

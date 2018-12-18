@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ViewController  } from 'ionic-angular';
 import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
 
 /**
@@ -17,7 +17,7 @@ import { MReportIncomeProvider } from '../../../providers/m-report-income/m-repo
 export class IncomeManagePage implements OnInit {
   income_report: Report_inc[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,  public MReportIncomeProvider: MReportIncomeProvider, public editModal:ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public MReportIncomeProvider: MReportIncomeProvider, public editModal:ModalController, public view:ViewController) {
   }
 
   ionViewDidLoad() {

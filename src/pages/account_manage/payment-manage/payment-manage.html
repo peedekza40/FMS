@@ -35,7 +35,7 @@
     <ion-item>
           <ion-label style="font-size: 12px;  text-align: left;">{{objs_p.pay_code}}</ion-label>
           <ion-label style="font-size: 12px;  text-align: center;">{{objs_p.desc_description}}</ion-label>
-          <ion-label style="font-size: 12px;  text-align: right; color:red;">-{{objs_p.pay_amount}}</ion-label> 
+          <ion-label style="font-size: 12px;  text-align: right; color:red;">-{{objs_p.pay_amount | number : fractionSize}}</ion-label> 
     </ion-item>
     <ion-item-options side="left"> 
       <button ion-button color="primary" (click)="show_alert_edit(objs_p)">

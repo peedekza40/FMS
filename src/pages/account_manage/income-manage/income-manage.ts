@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
-import { AlertController } from 'ionic-angular';
-=======
 import { IonicPage, NavController, NavParams, ModalController, ViewController, Refresher  } from 'ionic-angular';
 import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
 import * as moment from 'moment';
->>>>>>> origin/Boom
 
 /**
  * Generated class for the IncomeManagePage page.
@@ -24,15 +18,11 @@ import * as moment from 'moment';
 export class IncomeManagePage implements OnInit {
   income_report: Report_inc[];
 
-<<<<<<< HEAD
-  constructor(public navCtrl: NavController, public navParams: NavParams,private alertCtrl: AlertController,  public MReportIncomeProvider: MReportIncomeProvider, public editModal:ModalController) {
-=======
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,  
     public MReportIncomeProvider: MReportIncomeProvider, 
     public editModal:ModalController, 
     public view:ViewController) {
->>>>>>> origin/Boom
   }
 
   ionViewDidLoad() {

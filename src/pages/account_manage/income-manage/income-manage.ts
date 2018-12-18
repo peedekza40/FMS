@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
 import { AlertController } from 'ionic-angular';
 import { HomePage } from '../../home/home';
@@ -20,7 +20,11 @@ import { EditAccountPage } from '../edit-account/edit-account';
 export class IncomeManagePage implements OnInit {
   income_report: Report_inc[];
 
+<<<<<<< HEAD
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController , public MReportIncomeProvider: MReportIncomeProvider) {
+=======
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public MReportIncomeProvider: MReportIncomeProvider, public editModal:ModalController) {
+>>>>>>> origin/Boom
   }
 
   ionViewDidLoad() {
@@ -29,7 +33,7 @@ export class IncomeManagePage implements OnInit {
   ngOnInit() {
     this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
       this.income_report = response;
-      console.log(response);
+      //console.log(response);
     });
   } 
   // removeObjs_income(objs_i) {
@@ -93,6 +97,15 @@ export class IncomeManagePage implements OnInit {
       ]
     });
     confirm.present();
+  }
+
+  openEditModal(id){
+    // let para_data = {
+    //   inc_id:id
+    // };
+    
+    const myModal = this.editModal.create('EditModalPage', {inc_id:id});
+    myModal.present();
   }
 
 }

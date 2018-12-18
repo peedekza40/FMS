@@ -16,16 +16,27 @@
             <ion-label style="font-size: 12px;  text-align: right; color:darkgreen;">+{{objs_i.inc_amount| number : fractionSize}}</ion-label> 
       </ion-item>
       <ion-item-options side="left"> <!-- Slide bar edit -->
+<<<<<<< HEAD
         <button ion-button color="primary" (click)="show_alert_edit(objs_i)">
           <ion-icon name="edit"></ion-icon>
+=======
+        <button ion-button color="light" (click)="openEditModal(objs.inc_id)">
+          <ion-icon name="brush"></ion-icon>
+>>>>>>> origin/Boom
           แก้ไขข้อมูล
         </button>
       </ion-item-options>
       <ion-item-options side="right"> <!-- Slide bar delete -->
+<<<<<<< HEAD
         <button ion-button color="danger" (click)="show_alert_del(objs_i)">
           <ion-icon name="delete"></ion-icon>
+=======
+        <button ion-button color="danger">
+          <ion-icon name="trash"></ion-icon>
+>>>>>>> origin/Boom
           ลบข้อมูล
         </button>
+        
       </ion-item-options>
     </ion-item-sliding>
 </ion-list>

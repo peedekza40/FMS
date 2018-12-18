@@ -20,7 +20,7 @@ import { EditAccountPage } from '../edit-account/edit-account';
 export class IncomeManagePage implements OnInit {
   income_report: Report_inc[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,  public MReportIncomeProvider: MReportIncomeProvider, public editModal:ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private alertCtrl: AlertController,  public MReportIncomeProvider: MReportIncomeProvider, public editModal:ModalController) {
   }
 
   ionViewDidLoad() {

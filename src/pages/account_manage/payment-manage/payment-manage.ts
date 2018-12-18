@@ -43,7 +43,7 @@ export class PaymentManagePage implements OnInit{
   show_alert_del(objs_p){
     const confirm = this.alertCtrl.create({
       title: 'ลบรายการบัญชี',
-      message: 'ต้องการลบรายการบัญชีหรือไม่',
+      message: 'ยืนยันการลบบัญชีหรือไม่',
       buttons: [
         {
           text: 'ยกเลิก',
@@ -70,7 +70,7 @@ export class PaymentManagePage implements OnInit{
   show_alert_edit(objs_p){
     const confirm = this.alertCtrl.create({
       title: 'แก้ไขรายการบัญชี',
-      message: 'ต้องการแก้ไขบัญชีหรือไม่',
+      message: 'ยืนยันการแก้ไขบัญชีหรือไม่',
       buttons: [
         {
           text: 'ยกเลิก',

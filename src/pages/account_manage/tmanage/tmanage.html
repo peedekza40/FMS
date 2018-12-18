@@ -15,15 +15,23 @@
                 <ion-tabs selectedIndex="0" tabsPlacement="top" color="primary">
                         <ion-tab [root]="tab2Root" tabTitle="รายรับ" ></ion-tab>
                         <ion-tab [root]="tab3Root" tabTitle="รายจ่าย" ></ion-tab>
-             </ion-tabs>
+             </ion-tabs>  
+              
         </ion-row>
-         <br><br><br>
+                <p style="background-color:white;">&nbsp;&nbsp;</p>
          <!-- Header table -->       
          <ion-row>
+                <ion-toolbar >
+                 <ion-item>
+                     <ion-label><ion-icon name="search"> เลือกวันที่ต้องการค้นหา</ion-icon></ion-label>
+                      <ion-datetime  displayFormat="MM/DD/YYYY" [(ngModel)]="myDate" (ngModelChange)="testdate()"> </ion-datetime>
+                 </ion-item>
+                    </ion-toolbar>
+                    <br><br>
              <ion-col size="1" style="background-color: white;">
                     <h1 style="font-size: 18px; text-align: center;"><b>ตารางลงรายการบัญชีรายรับ-รายจ่าย</b></h1>
              </ion-col>
-         </ion-row>     
+         </ion-row> 
          <ion-row>
                     <ion-item>   
                             <ion-label   style="font-size: 13px; text-align: left;"><b>รายละเอียด</b></ion-label>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
 import { AlertController } from 'ionic-angular';
+import { HomePage } from '../../home/home';
+import { EditAccountPage } from '../edit-account/edit-account';
 
 /**
  * Generated class for the IncomeManagePage page.
@@ -82,7 +84,7 @@ export class IncomeManagePage implements OnInit {
           handler: () => {
             this.income_report.forEach((element, index) => {
                    if (element == objs_i) {
-                     this.income_report.splice(index, 1);
+                  // this.navCtrl.push();
                   }
             });
             console.log('Agree clicked');

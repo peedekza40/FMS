@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+<<<<<<< HEAD
 import { NgForOf } from '@angular/common';
 import { defaultIterableDiffers } from '@angular/core/src/change_detection/change_detection';
 import { AlertController } from 'ionic-angular';
 import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-income';
 import { MReportPaymentProvider } from '../../providers/m-report-payment/m-report-payment';
+=======
+import { ReportDataTranferProvider } from '../../providers/report-data-tranfer/report-data-tranfer';
+>>>>>>> zoom
 
 /**
  * Generated class for the SummarizeReportPage page.
@@ -18,14 +22,48 @@ import { MReportPaymentProvider } from '../../providers/m-report-payment/m-repor
   selector: 'page-summarize-report',
   templateUrl: 'summarize-report.html', 
 })
+<<<<<<< HEAD
 export class SummarizeReportPage implements OnInit{
   income_report: Report_inc[]; 
   payment_report: Report_pay[]; 
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,  public MReportIncomeProvider: MReportIncomeProvider , public MReportPaymentProvider: MReportPaymentProvider) {
+=======
+export class SummarizeReportPage {
+  private bac_id:number;
+  private start_date:string;
+  private end_date:string;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private reportdatatranfer: ReportDataTranferProvider) {
+  }
+
+  ionViewDidLeave(){
+    this.bac_id = this.reportdatatranfer.bac_id;
+    this.start_date = this.reportdatatranfer.start_date;
+    this.end_date = this.reportdatatranfer.end_date;
+  }
+
+  ionViewDidEnter(){
+    this.bac_id = this.reportdatatranfer.bac_id;
+    this.start_date = this.reportdatatranfer.start_date;
+    this.end_date = this.reportdatatranfer.end_date;
+  }
+
+  ionViewWillEnter(){
+    // console.log('summerize loaded');
+    // this.bac_id = this.reportdatatranfer.bac_id;
+    // this.start_date = this.reportdatatranfer.start_date;
+    // this.end_date = this.reportdatatranfer.end_date;
+    // console.log(this.bac_id);
+    // console.log(this.start_date);
+    // console.log(this.end_date);
+>>>>>>> zoom
   }
   
   ionViewDidLoad() {
+    this.bac_id = this.reportdatatranfer.bac_id;
+    this.start_date = this.reportdatatranfer.start_date;
+    this.end_date = this.reportdatatranfer.end_date;
+
     console.log('ionViewDidLoad SummarizeReportPage');
   }
   

@@ -29,9 +29,9 @@
   <form>
     <ion-item>
         <ion-label>Bank Account</ion-label>
-        <ion-select #bac_id>
-          <ion-option value=1>Mr.A</ion-option>
-          <ion-option value=2>MR.B</ion-option>
+        <ion-select #bac_id name="b_id" multiple="false">
+          <ion-option *ngFor="let report of Bank_acc_data" [value] = "report.bacId" >{{report.bacName}}</ion-option>
+          
         </ion-select>
       </ion-item>
 
@@ -45,6 +45,6 @@
         <ion-input type="date" #e_date></ion-input>
       </ion-item>
 
-      <button ion-button color="primary" (click)="inputPost(bac_id.value, s_date.value, e_date.value)">Search</button>
+      <button ion-button color="primary"  (click)="inputPost(bac_id.value, s_date.value, e_date.value)">Search</button>
   </form>
 </ion-content>

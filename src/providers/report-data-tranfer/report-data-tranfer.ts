@@ -7,6 +7,8 @@ export class ReportDataTranferProvider {
   public start_date:string;
   public end_date:string;
   constructor() {
+    //let now_date = new Date().toDateString();
+
   }
 
 }

@@ -20,19 +20,27 @@ export class IncomeReportPage {
   private start_date:string;
   private end_date:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private reportDataSearch:ReportDataTranferProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private reportdatatranfer:ReportDataTranferProvider) {
     
+  }
+
+  ionViewDidLeave(){
+    this.bac_id = this.reportdatatranfer.bac_id;
+    this.start_date = this.reportdatatranfer.start_date;
+    this.end_date = this.reportdatatranfer.end_date;
+  }
+
+  ionViewDidEnter(){
+    this.bac_id = this.reportdatatranfer.bac_id;
+    this.start_date = this.reportdatatranfer.start_date;
+    this.end_date = this.reportdatatranfer.end_date;
   }
 
   ionViewDidLoad() {
     /* set attribute  */
-    this.bac_id = this.reportDataSearch.bac_id;
-    this.start_date = this.reportDataSearch.start_date;
-    this.end_date = this.reportDataSearch.end_date;
-    
-    console.log(this.bac_id);
-    console.log(this.start_date);
-    console.log(this.end_date);
+    this.bac_id = this.reportdatatranfer.bac_id;
+    this.start_date = this.reportdatatranfer.start_date;
+    this.end_date = this.reportdatatranfer.end_date;
     console.log('ionViewDidLoad IncomeReportPage');
   }
 

@@ -35,31 +35,22 @@ export class ReportPage implements OnInit{
   ngOnInit() {
   }
 
+  ionViewWillEnter(){
+    this.bac_id = this.reportDataSearch.bac_id;
+    this.start_date = this.reportDataSearch.start_date;
+    this.end_date = this.reportDataSearch.end_date;
+  }
+
   ionViewDidLoad() {
-    /* set attribute */
-    this.bac_id = this.navParams.get('sd_bac_id');
-    this.start_date = this.navParams.get('sd_s_date');
-    this.end_date = this.navParams.get('sd_e_date');
-
-    /* check null data */
-    if(this.bac_id == null){
-      this.bac_id = 0;
-    }if(this.start_date == null){
-      this.start_date = 'now_date';
-    }if(this.end_date == null){
-      this.end_date = 'nowdate';
-    }
-
-    /* set report data tranfer service attribute */
-    this.reportDataSearch.bac_id = this.bac_id;
-    this.reportDataSearch.start_date = this.start_date;
-    this.reportDataSearch.end_date = this.end_date;
     console.log('ionViewDidLoad ReportPage');
     
   }
 
   async presentModal() {
     let modal = this.modalCtrl.create(ModalssearchPage);
+    modal.onDidDismiss(()=>{
+      this.navCtrl.setRoot(this.navCtrl.getActive().component);
+    });
     modal.present();
   }
  

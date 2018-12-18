@@ -21,15 +21,34 @@ export class SummarizeReportPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private reportdatatranfer: ReportDataTranferProvider) {
   }
 
+  ionViewDidLeave(){
+    this.bac_id = this.reportdatatranfer.bac_id;
+    this.start_date = this.reportdatatranfer.start_date;
+    this.end_date = this.reportdatatranfer.end_date;
+  }
+
+  ionViewDidEnter(){
+    this.bac_id = this.reportdatatranfer.bac_id;
+    this.start_date = this.reportdatatranfer.start_date;
+    this.end_date = this.reportdatatranfer.end_date;
+  }
+
+  ionViewWillEnter(){
+    // console.log('summerize loaded');
+    // this.bac_id = this.reportdatatranfer.bac_id;
+    // this.start_date = this.reportdatatranfer.start_date;
+    // this.end_date = this.reportdatatranfer.end_date;
+    // console.log(this.bac_id);
+    // console.log(this.start_date);
+    // console.log(this.end_date);
+  }
+
   ionViewDidLoad() {
     this.bac_id = this.reportdatatranfer.bac_id;
     this.start_date = this.reportdatatranfer.start_date;
     this.end_date = this.reportdatatranfer.end_date;
 
     console.log('ionViewDidLoad SummarizeReportPage');
-    console.log(this.bac_id);
-    console.log(this.start_date);
-    console.log(this.end_date);
   }
 
 }

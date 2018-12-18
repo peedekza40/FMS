@@ -23,6 +23,18 @@ export class PaymentReportPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private reportdatatranfer: ReportDataTranferProvider) {
   }
 
+  ionViewDidLeave(){
+    this.bac_id = this.reportdatatranfer.bac_id;
+    this.start_date = this.reportdatatranfer.start_date;
+    this.end_date = this.reportdatatranfer.end_date;
+  }
+
+  ionViewDidEnter(){
+    this.bac_id = this.reportdatatranfer.bac_id;
+    this.start_date = this.reportdatatranfer.start_date;
+    this.end_date = this.reportdatatranfer.end_date;
+  }
+
   ionViewDidLoad() {
     this.bac_id = this.reportdatatranfer.bac_id;
     this.start_date = this.reportdatatranfer.start_date;

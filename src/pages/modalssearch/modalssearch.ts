@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { ReportPage } from '../report/report';
 import { MBankaccountProvider } from '../../providers/m-bankaccount/m-bankaccount';
+import { ReportDataTranferProvider } from '../../providers/report-data-tranfer/report-data-tranfer';
 
 @IonicPage()
 @Component({
@@ -12,9 +13,8 @@ export class ModalssearchPage implements OnInit {
   private bac_id:number;
   private start_date:string ;
   private end_date:string;
-  private Bank_acc_data:Array<any>;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private BacData: MBankaccountProvider) {
+  private Bank_acc_data:Bac_data[];
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private BacData: MBankaccountProvider, private reportDataSearch: ReportDataTranferProvider) {
   }
 
   ngOnInit() {
@@ -37,7 +37,7 @@ export class ModalssearchPage implements OnInit {
 
     /* post value Null check */
     if(b_id == ''){
-      this.bac_id = 99;
+      this.bac_id = 0;
     }else{
       this.bac_id = b_id;
     }
@@ -55,11 +55,9 @@ export class ModalssearchPage implements OnInit {
     }
 
     /* push data to report page */
-    this.navCtrl.push(ReportPage, {
-      sd_bac_id: this.bac_id,
-      sd_s_date: this.start_date,
-      sd_e_date: this.end_date
-    });
+    this.reportDataSearch.bac_id = this.bac_id;
+    this.reportDataSearch.start_date = this.start_date;
+    this.reportDataSearch.end_date = this.end_date;
 
     /* close modal */
     this.viewCtrl.dismiss();

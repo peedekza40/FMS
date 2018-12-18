@@ -18,18 +18,22 @@ import { MReportIncomeProvider } from '../../../providers/m-report-income/m-repo
 })
 export class EditModalPage {
   desc_obj:desc [];
-  inc_obj:report_inc [];
+  inc_obj:report_inc;
   bankacc_obj:bankacc [];
   inc_id = 0;
 
-  inc_amount_val:number = 0;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public view: ViewController, public  MDescriptionProvider: MDescriptionProvider, public MReportIncomeProvider:MReportIncomeProvider, public MBankaccountProvider:MBankaccountProvider) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public view: ViewController, 
+    public MDescriptionProvider: MDescriptionProvider, 
+    public MReportIncomeProvider:MReportIncomeProvider, 
+    public MBankaccountProvider:MBankaccountProvider) {
   }
 
   ionViewDidLoad() {
     // var inc_id = this.inc_id = this.navParams.get('inc_id');
     // console.log(inc_id);
-    // this.inc_amount_val = this.navParams.get('obj.inc_amount');
+    //this.inc_amount_val = this.navParams.get('obj.inc_amount');
   }
 
   ngOnInit() {
@@ -42,21 +46,21 @@ export class EditModalPage {
 
     this.MBankaccountProvider.get_bankAccount_by_bacActive().subscribe((response) => {
       this.bankacc_obj = response;
-      //console.log();
+      //console.log(this.bankacc_obj);
     });
     
     this.MReportIncomeProvider.get_by_inc_id(inc_id).subscribe((response) => {
       this.inc_obj = response;
-      //console.log(response);
-      
+      console.log(response);
     });
   
   }
 
   btnSubmit(){
-    let amount_val = this.navParams.get('obj.inc_amount');
-    this.view.dismiss();
-    console.log(amount_val);
+    //var amount_val = this.inc_obj[0].inc_amount;
+    var para_obj = this.inc_obj;
+    this.view.dismiss(para_obj);
+    //console.log(para_obj);
   }
 
 }
@@ -73,10 +77,16 @@ interface bankacc{
 }
 
 interface report_inc{
+  inc_id:number;
+  inc_date:Date;
   inc_code: string;
   inc_receipt: string;
   inc_receipt_code: string;
+  inc_receipt_date: Date;
   inc_desc_id: number;
   inc_bac_id: number;
   inc_amount: number;
+  inc_detail: string;
+  inc_status: string;
+  inc_editor: number;
 }

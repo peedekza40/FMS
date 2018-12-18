@@ -23,4 +23,9 @@ export class MReportIncomeProvider {
     return this.http.post('http://10.80.6.160:1068/get_by_inc_id',{inc_id:inc_id}).pipe(map((res)=>res.json()));
   }
 
+  update_income(inc_id, inc_date, inc_receipt, inc_receipt_code, inc_receipt_date, inc_amount, inc_detail, inc_desc_id, inc_bac_id, inc_status, inc_editor){
+    return this.http.put('http://10.80.6.160:1068/update_income',{inc_id:inc_id, inc_date:inc_date, inc_receipt:inc_receipt, inc_receipt_code:inc_receipt_code,
+     inc_receipt_date:inc_receipt_date, inc_amount:inc_amount, inc_detail:inc_detail, inc_desc_id:inc_desc_id, inc_bac_id:inc_bac_id, inc_status:inc_status, 
+     inc_editor:inc_editor}).pipe(map((res)=>res.json()));
+  }
 }

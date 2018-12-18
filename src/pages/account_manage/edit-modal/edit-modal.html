@@ -25,7 +25,7 @@
   
           <ion-item>
             <ion-label stacked>เลือกบัญชีธนาคาร</ion-label>
-            <ion-select multiple="false">
+            <ion-select [(ngModel)]="obj.inc_bac_id" multiple="false">
                 <div *ngFor="let bankacc_opt of bankacc_obj;">
                   <div *ngIf ="obj.inc_bac_id == bankacc_opt.bacId">
                       <ion-option  [value]="bankacc_opt.bacId" selected="true">{{bankacc_opt.bacName}}</ion-option>
@@ -48,7 +48,7 @@
   
           <ion-item>
             <ion-label stacked>คำอธิบาย</ion-label>
-            <ion-select multiple="false">
+            <ion-select [(ngModel)]="obj.inc_desc_id" multiple="false">
               <div *ngFor="let desc_opt of desc_obj;">
                 <div *ngIf ="obj.inc_desc_id == desc_opt.desc_id">
                     <ion-option  [value]="desc_opt.desc_id" selected="true">{{desc_opt.desc_description}}</ion-option>

@@ -92,16 +92,6 @@ export class IncomeManagePage implements OnInit {
     });
     confirm.present();
   }
-
-  openEditModal(id){
-    // let para_data = {
-    //   inc_id:id
-    // };
-    
-    const myModal = this.editModal.create('EditModalPage', {inc_id:id});
-    myModal.present();
-  }
-
 }
 
 

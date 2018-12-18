@@ -1,8 +1,8 @@
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { MDescriptionProvider } from '../../providers/m-description/m-description';
-import { MBankaccountProvider } from '../../providers/m-bankaccount/m-bankaccount';
-import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-income';
+import { MDescriptionProvider } from '../../../providers/m-description/m-description';
+import { MBankaccountProvider } from '../../../providers/m-bankaccount/m-bankaccount';
+import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
 
 /**
  * Generated class for the EditModalPage page.
@@ -54,11 +54,9 @@ export class EditModalPage {
   }
 
   btnSubmit(){
-    let edit_data = {
-      amount_val:this.navParams.get('obj.inc_amount')
-    };
-
-    console.log(edit_data);
+    let amount_val = this.navParams.get('obj.inc_amount');
+    this.view.dismiss();
+    console.log(amount_val);
   }
 
 }

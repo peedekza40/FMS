@@ -1,13 +1,8 @@
-<!--
-  Generated template for the EditModalPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>editModal</ion-title>
+    <ion-title float-right>EditModal</ion-title>
+    <button ion-button navPop> ยกลิก </button>
   </ion-navbar>
 
 </ion-header>
@@ -23,13 +18,24 @@
         
           <ion-item>
             <ion-label stacked>เลขที่บัญชี</ion-label>
-            <ion-input type="text"></ion-input>
+            <div *ngFor="let bankacc2_opt of bankacc_obj;">
+                <div *ngIf ="obj.inc_bac_id == bankacc2_opt.bacId">
+                  <ion-input type="text" [(ngModel)]="bankacc2_opt.bacNo">{{bankacc2_opt.bacNo}}</ion-input>
+                </div>
+            </div>
           </ion-item>
   
           <ion-item>
             <ion-label stacked>เลือกบัญชีธนาคาร</ion-label>
-            <ion-select>
-                <ion-option *ngFor="let bankacc_opt of bankacc_obj;">{{bankacc_opt.bacName}}</ion-option>
+            <ion-select multiple="false">
+                <div *ngFor="let bankacc_opt of bankacc_obj;">
+                  <div *ngIf ="obj.inc_bac_id == bankacc_opt.bacId">
+                      <ion-option  [value]="bankacc_opt.bacId" selected="true">{{bankacc_opt.bacName}}</ion-option>
+                  </div>
+                  <div *ngIf ="obj.inc_bac_id != bankacc_opt.bacId">
+                      <ion-option  [value]="bankacc_opt.bacId">{{bankacc_opt.bacName}}</ion-option>
+                  </div>
+                </div>
             </ion-select>
           </ion-item>
   
@@ -37,7 +43,6 @@
             <ion-label stacked>เล่มที่ใบเสร็จ</ion-label>
             <ion-input type="text" [(ngModel)]="obj.inc_receipt"></ion-input>
           </ion-item>
-  
           <ion-item>
             <ion-label stacked>เลขที่ใบเสร็จ</ion-label>
             <ion-input type="text" [(ngModel)]="obj.inc_receipt_code"></ion-input>
@@ -45,17 +50,23 @@
   
           <ion-item>
             <ion-label stacked>คำอธิบาย</ion-label>
-            <ion-select>
-              <ion-option *ngFor="let desc_opt of desc_obj;">{{desc_opt.desc_description}}</ion-option>
+            <ion-select multiple="false">
+              <div *ngFor="let desc_opt of desc_obj;">
+                <div *ngIf ="obj.inc_desc_id == desc_opt.desc_id">
+                    <ion-option  [value]="desc_opt.desc_id" selected="true">{{desc_opt.desc_description}}</ion-option>
+                </div>
+                <div *ngIf ="obj.inc_desc_id != desc_opt.desc_id">
+                    <ion-option  [value]="desc_opt.desc_id">{{desc_opt.desc_description}}</ion-option>
+                </div>
+              </div>
             </ion-select>
           </ion-item>
-  
-          <ion-item>
-            <ion-label stacked>จำนวนงิน</ion-label>
+
+            <ion-item>
+            <ion-label stacked>จำนวนเงิน</ion-label>
             <ion-input type="number" [(ngModel)]="obj.inc_amount"></ion-input>
           </ion-item>
         </ion-list>
       
-      <button ion-button color="light" navPop>ยกลิก</button>
-      <button ion-button float-right>ยืนยัน</button>
+      <button ion-button float-right (click)="btnSubmit()">ยืนยัน</button>
 </ion-content>

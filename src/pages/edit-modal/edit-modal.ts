@@ -19,8 +19,12 @@ import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-
 export class EditModalPage {
   desc_obj:desc [];
   inc_obj:report_inc [];
+  inc_desc_id : number;
+  
   bankacc_obj:bankacc [];
   inc_id = 0;
+  bacNo_val:string;
+  name:string = "boom";
   constructor(public navCtrl: NavController, public navParams: NavParams, public view: ViewController, public  MDescriptionProvider: MDescriptionProvider, public MReportIncomeProvider:MReportIncomeProvider, public MBankaccountProvider:MBankaccountProvider) {
   }
 
@@ -44,13 +48,11 @@ export class EditModalPage {
     
     this.MReportIncomeProvider.get_by_inc_id(inc_id).subscribe((response) => {
       this.inc_obj = response;
-      //console.log(response);
+      console.log(response);
+      
     });
+  
   }
-
-  // compareFn(e1: report_inc, e2: desc): boolean {
-  //   return e1 && e2 ? e1.inc_desc_id === e2.desc_id : e1 === e2;
-  // }
 
 }
 
@@ -61,6 +63,7 @@ interface desc{
 
 interface bankacc{
   bacId: number;
+  bacNo: string;
   bacName: string;
 }
 
@@ -69,5 +72,6 @@ interface report_inc{
   inc_receipt: string;
   inc_receipt_code: string;
   inc_desc_id: number;
+  inc_bac_id: number;
   inc_amount: number;
 }

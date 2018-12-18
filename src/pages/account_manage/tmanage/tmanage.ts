@@ -21,7 +21,7 @@ export class TmanagePage implements OnInit {
   tab2Root = IncomeManagePage;
   tab3Root = PaymentManagePage;
   constructor(public navCtrl: NavController, public navParams: NavParams, public MReportIncomeProvider: MReportIncomeProvider) {
-    this.myDate = moment(new Date()).format();
+    this.myDate = moment(new Date()).format("MMM Do YY");
   }
 
   ionViewDidLoad() {

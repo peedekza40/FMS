@@ -54,11 +54,11 @@ export class EditModalPage {
   }
 
   btnSubmit(){
-    // let edit_data = {
-    //   amount_val:this.navParams.get('obj.inc_amount');
-    // };
-    var amount_val = this.navParams.get('obj.inc_amount');
-    console.log(amount_val);
+    let edit_data = {
+      amount_val:this.navParams.get('obj.inc_amount')
+    };
+
+    console.log(edit_data);
   }
 
 }

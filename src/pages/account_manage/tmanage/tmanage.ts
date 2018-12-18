@@ -33,7 +33,7 @@ export class TmanagePage implements OnInit {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TmanagePage');
+    //console.log('ionViewDidLoad TmanagePage');
   }
   ngOnInit() {
   } 

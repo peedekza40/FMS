@@ -18,11 +18,7 @@
         
           <ion-item>
             <ion-label stacked>เลขที่บัญชี</ion-label>
-            <div *ngFor="let bankacc2_opt of bankacc_obj;">
-                <div *ngIf ="obj.inc_bac_id == bankacc2_opt.bacId">
-                  <ion-input type="text" [(ngModel)]="bankacc2_opt.bacNo">{{bankacc2_opt.bacNo}}</ion-input>
-                </div>
-            </div>
+            <ion-input type="text"></ion-input>
           </ion-item>
   
           <ion-item>

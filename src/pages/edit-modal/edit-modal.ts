@@ -23,8 +23,6 @@ export class EditModalPage {
   
   bankacc_obj:bankacc [];
   inc_id = 0;
-  bacNo_val:string;
-  name:string = "boom";
   constructor(public navCtrl: NavController, public navParams: NavParams, public view: ViewController, public  MDescriptionProvider: MDescriptionProvider, public MReportIncomeProvider:MReportIncomeProvider, public MBankaccountProvider:MBankaccountProvider) {
   }
 
@@ -43,12 +41,12 @@ export class EditModalPage {
 
     this.MBankaccountProvider.get_bankAccount_by_bacActive().subscribe((response) => {
       this.bankacc_obj = response;
-      console.log(response);
+      //console.log();
     });
     
     this.MReportIncomeProvider.get_by_inc_id(inc_id).subscribe((response) => {
       this.inc_obj = response;
-      console.log(response);
+      //console.log(response);
       
     });
   

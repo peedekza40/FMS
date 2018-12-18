@@ -18,12 +18,7 @@ import { PaymentManagePage } from '../pages/account_manage/payment-manage/paymen
 import { MReportIncomeProvider } from '../providers/m-report-income/m-report-income';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-<<<<<<< HEAD
 import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-payment'; 
-=======
-import { MDescriptionProvider } from '../providers/m-description/m-description';
-import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
->>>>>>> origin/Boom
 
 @NgModule({
   declarations: [
@@ -35,7 +30,7 @@ import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
     IncomeReportPage,
     PaymentReportPage,
     IncomeManagePage,
-    PaymentManagePage
+    PaymentManagePage,
   ],
   imports: [
     BrowserModule,
@@ -53,19 +48,15 @@ import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
     IncomeReportPage,
     PaymentReportPage,
     IncomeManagePage,
-    PaymentManagePage
+    PaymentManagePage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MReportIncomeProvider,
-<<<<<<< HEAD
     MReportPaymentProvider
-=======
-    MDescriptionProvider,
-    MBankaccountProvider
->>>>>>> origin/Boom
+
   ]
 })
 export class AppModule {}

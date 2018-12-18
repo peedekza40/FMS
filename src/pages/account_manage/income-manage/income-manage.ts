@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
 import { AlertController } from 'ionic-angular';
-import { HomePage } from '../../home/home';
-import { EditAccountPage } from '../edit-account/edit-account';
 
 /**
  * Generated class for the IncomeManagePage page.

@@ -17,33 +17,23 @@ import { AlertController } from 'ionic-angular';
 })
 export class PaymentManagePage implements OnInit{
   report:Report_pay[]
-
   constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController , public MReportPaymentProvider:MReportPaymentProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PaymentManagePage');
   }
-
   ngOnInit() {
     this.MReportPaymentProvider.get_by_pay_date().subscribe((response) => {
       this.report = response;
       console.log(response);
     });
   }
-  // removeObjs_payment(pay_code) {
-  //   this.report.forEach((element, index) => {
-  //     if (element == pay_code) {
-  //       this.report.splice(index, 1);
-  //     }
-  //   });
-  // }//end PaymentManagePage
 
-  //show_alert_del
-  show_alert_del(objs_p){
+  show_alert_del(objs){
     const confirm = this.alertCtrl.create({
       title: 'ลบรายการบัญชี',
-      message: 'ต้องการลบรายการบัญชีหรือไม่',
+      message: 'ยืนยันการลบบัญชีหรือไม่',
       buttons: [
         {
           text: 'ยกเลิก',
@@ -55,7 +45,7 @@ export class PaymentManagePage implements OnInit{
           text: 'ยืนยัน',
           handler: () => {
             this.report.forEach((element, index) => {
-                   if (element == objs_p) {
+                   if (element == objs) {
                      this.report.splice(index, 1);
                   }
             });
@@ -67,10 +57,10 @@ export class PaymentManagePage implements OnInit{
     confirm.present();
   }
   //show_alert_edit
-  show_alert_edit(objs_p){
+  show_alert_edit(objs){
     const confirm = this.alertCtrl.create({
       title: 'แก้ไขรายการบัญชี',
-      message: 'ต้องการแก้ไขบัญชีหรือไม่',
+      message: 'ยืนยันการแก้ไขบัญชีหรือไม่',
       buttons: [
         {
           text: 'ยกเลิก',
@@ -82,7 +72,7 @@ export class PaymentManagePage implements OnInit{
           text: 'ยืนยัน',
           handler: () => {
             this.report.forEach((element, index) => {
-                   if (element == objs_p) {
+                   if (element == objs) {
                      this.report.splice(index, 1);
                   }
             });
@@ -95,7 +85,6 @@ export class PaymentManagePage implements OnInit{
   }
 
 }
-
 interface Report_pay{
   pay_code : string;
   desc_description: string;

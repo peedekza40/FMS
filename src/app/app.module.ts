@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 /*------------------------------pages------------------------------*/
 import { MyApp } from './app.component';
@@ -20,6 +20,8 @@ import { MReportIncomeProvider } from '../providers/m-report-income/m-report-inc
 import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-payment'; 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { MDescriptionProvider } from '../providers/m-description/m-description';
+import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PaymentReportPage,
     IncomeManagePage,
     PaymentManagePage,
-    AddAccountPage
   ],
   imports: [
     BrowserModule,
@@ -51,13 +52,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PaymentReportPage,
     IncomeManagePage,
     PaymentManagePage,
-    AddAccountPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MReportIncomeProvider,
+    MDescriptionProvider,
+    MBankaccountProvider,
     MReportPaymentProvider
   ]
 })

@@ -18,9 +18,13 @@ import * as moment from 'moment';
 })
 export class IncomeReportPage implements OnInit{
   public report_income:Report_income[];
-  
+  sum:number = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public MReportIncomeProvider: MReportIncomeProvider , public  alertCtrl: AlertController) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public MReportIncomeProvider: MReportIncomeProvider,
+    public  alertCtrl: AlertController) {
   } //constructor
 
   ionViewDidLoad() {
@@ -31,12 +35,10 @@ export class IncomeReportPage implements OnInit{
     this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
       this.report_income = response;
       let i:number = 0;
-      this.report_income.forEach((element) => {
-        //console.log(element.inc_amount);
-        i += element.inc_amount;
-      });
-      //console.log('Sum total : '+i);
-      //console.log(this.report_income.keys(response).length); 
+      let y = this.report_income.length;  //can't use .length in for loop
+      for(let i = 0;i<y;i++){
+        this.sum += +(this.report_income[i]['inc_amount']);
+      }//for
     });
   }//ngOnInit
 
@@ -45,12 +47,12 @@ export class IncomeReportPage implements OnInit{
   }//convert_date
 
   get_sum(){
-    var sum_total = 0;
-    this.report_income.forEach( (element)=> {
-      sum_total += element.inc_amount;
-    });
-      console.log(sum_total);
-      return sum_total;
+    // var sum_total = 0;
+    // this.report_income.forEach( (element)=> {
+    //   sum_total += element.inc_amount;
+    // });
+    //   console.log(sum_total);
+    //   return sum_total;
   }//get_sum
 
   show_alert_del(obj){

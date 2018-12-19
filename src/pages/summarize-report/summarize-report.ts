@@ -55,25 +55,6 @@ export class SummarizeReportPage implements OnInit{
     });
   }
 
-  // get_sum_payment(){
-  //   var sum_total = 0;
-  //   var y =0;
-  //   for (let i=0; i<this.payment_report.length; i++) {
-  //       y = +(this.payment_report[i].pay_amount);
-  //       sum_total += y;
-  //   }
-  //     return sum_total.toFixed(2);
-  // }
-
-  // get_sum_income(){
-  //   var sum_inc = 0;
-  //   this.income.forEach(function(value){
-  //       sum_inc += value.inc_amount;
-  //   });
-  //   return sum_inc;
-  // }
-
-
   show_alert_del(obj){
     const confirm = this.alertCtrl.create({
       title: 'ลบรายการบัญชี',

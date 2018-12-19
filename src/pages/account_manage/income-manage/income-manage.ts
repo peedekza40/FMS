@@ -38,41 +38,15 @@ export class IncomeManagePage implements OnInit {
       console.log(response);
     });
   } 
-  // removeObjs_income(objs_i) {
-  //   this.income_report.forEach((element, index) => {
-  //     if (element == objs_i) {
-  //       this.income_report.splice(index, 1);
-  //     }
-  //   });
-  // }
+  removeObjs(objs) {
+    objs.forEach((element, index) => {
+      if (element == objs) {
+        objs.splice(index, 1);
+      }
+    });
+  }
 
   // Edit show_alert_del
-  show_alert_del(objs_i){
-    const confirm = this.alertCtrl.create({
-      title: 'ลบรายการบัญชี',
-      message: 'ยืนยันการลบบัญชีหรือไม่',
-      buttons: [
-        {
-          text: 'ยกเลิก',
-          handler: () => {
-            console.log('Disagree clicked');
-          }
-        },
-        {
-          text: 'ยืนยัน',
-          handler: () => {
-            this.income_report.forEach((element, index) => {
-                   if (element == objs_i) {
-                     this.income_report.splice(index, 1);
-                  }
-            });
-            console.log('Agree clicked');
-          }
-        }
-      ]
-    });
-    confirm.present();
-  }
   testdate(){
    //this.date=this.myDate;
   // console.log(this.date);
@@ -86,7 +60,6 @@ export class IncomeManagePage implements OnInit {
   openEditModal(id){
     const myModal = this.editModal.create('EditModalPage', {inc_id:id});
     myModal.present();
-  }
   
 
     myModal.onWillDismiss((data) => {

@@ -39,15 +39,15 @@ export class ModalssearchPage implements OnInit {
     }
 
     if(s_d == ''){
-      this.start_date = moment().format('DD-MM-YYYY').toString();
+      this.start_date = moment().format('YYYY-MM-DD').toString();
     }else{
-      this.start_date = moment(s_d).format('DD-MM-YYYY').toString();
+      this.start_date = moment(s_d).format('YYYY-MM-DD').toString();
     }
 
     if(e_d == ''){
-      this.end_date = moment().format('DD-MM-YYYY').toString();
+      this.end_date = moment().format('YYYY-MM-DD').toString();
     }else{
-      this.end_date = moment(e_d).format('DD-MM-YYYY').toString();
+      this.end_date = moment(e_d).format('YYYY-MM-DD').toString();
     }
 
     /* push data to report page */

@@ -2,13 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController} from 'ionic-angular';
 import { SummarizeReportPage } from '../summarize-report/summarize-report';
 import { IncomeReportPage } from '../income-report/income-report';
-<<<<<<< HEAD
-import { PaymentReportPage } from '../payment-report/payment-report'; 
-=======
 import { PaymentReportPage } from '../payment-report/payment-report';
 import { ModalssearchPage } from '../modalssearch/modalssearch';
 import { ReportDataTranferProvider } from '../../providers/report-data-tranfer/report-data-tranfer';
->>>>>>> zoom
 
 
 /**
@@ -23,13 +19,6 @@ import { ReportDataTranferProvider } from '../../providers/report-data-tranfer/r
   selector: 'page-report',
   templateUrl: 'report.html', 
 })
-<<<<<<< HEAD
-export class ReportPage {
-
-  tab1Root = SummarizeReportPage;
-  tab2Root = IncomeReportPage;
-  tab3Root = PaymentReportPage; 
-=======
 export class ReportPage implements OnInit{
  
   tab1Root = SummarizeReportPage;
@@ -39,7 +28,6 @@ export class ReportPage implements OnInit{
   private bac_id:number;
   private start_date:string;
   private end_date:string;
->>>>>>> zoom
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl:ModalController, private reportDataSearch: ReportDataTranferProvider) {
   }

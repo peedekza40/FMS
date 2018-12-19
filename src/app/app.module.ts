@@ -13,18 +13,15 @@ import { ReportPage } from '../pages/report/report';
 import { SummarizeReportPage } from '../pages/summarize-report/summarize-report';
 import { IncomeReportPage } from '../pages/income-report/income-report';
 import { PaymentReportPage } from '../pages/payment-report/payment-report';
-<<<<<<< HEAD
 import { IncomeManagePage } from '../pages/account_manage/income-manage/income-manage';
 /*------------------------------providers------------------------------*/
 import { MReportIncomeProvider } from '../providers/m-report-income/m-report-income';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen'; 
 import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-payment';
-=======
 import { ModalssearchPage } from '../pages/modalssearch/modalssearch';
 import { ReportDataTranferProvider } from '../providers/report-data-tranfer/report-data-tranfer';
 import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
->>>>>>> zoom
 
 @NgModule({
   declarations: [
@@ -36,11 +33,8 @@ import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
     SummarizeReportPage,
     IncomeReportPage,
     PaymentReportPage,
-<<<<<<< HEAD
-    IncomeManagePage
-=======
+    IncomeManagePage,
     ModalssearchPage
->>>>>>> zoom
   ],
   imports: [
     BrowserModule,
@@ -58,24 +52,18 @@ import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
     SummarizeReportPage,
     IncomeReportPage,
     PaymentReportPage,
-<<<<<<< HEAD
-    IncomeManagePage
-=======
+    IncomeManagePage,
     ModalssearchPage
->>>>>>> zoom
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-<<<<<<< HEAD
     MReportIncomeProvider,
     MReportPaymentProvider,
-    MReportPaymentProvider
-=======
+    MReportPaymentProvider,
     ReportDataTranferProvider,
     MBankaccountProvider
->>>>>>> zoom
   ]
 })
 export class AppModule {}

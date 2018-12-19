@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-<<<<<<< HEAD
+import { ReportDataTranferProvider } from '../../providers/report-data-tranfer/report-data-tranfer';
 import { NgForOf } from '@angular/common';
 import { defaultIterableDiffers } from '@angular/core/src/change_detection/change_detection';
 import { AlertController } from 'ionic-angular';
 import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-income';
 import { MReportPaymentProvider } from '../../providers/m-report-payment/m-report-payment';
-=======
-import { ReportDataTranferProvider } from '../../providers/report-data-tranfer/report-data-tranfer';
->>>>>>> zoom
 
 /**
  * Generated class for the SummarizeReportPage page.
@@ -22,57 +19,50 @@ import { ReportDataTranferProvider } from '../../providers/report-data-tranfer/r
   selector: 'page-summarize-report',
   templateUrl: 'summarize-report.html', 
 })
-<<<<<<< HEAD
 export class SummarizeReportPage implements OnInit{
   income_report: Report_inc[]; 
   payment_report: Report_pay[]; 
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,  public MReportIncomeProvider: MReportIncomeProvider , public MReportPaymentProvider: MReportPaymentProvider) {
-=======
-export class SummarizeReportPage {
-  private bac_id:number;
-  private start_date:string;
-  private end_date:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private reportdatatranfer: ReportDataTranferProvider) {
-  }
-
-  ionViewDidLeave(){
-    this.bac_id = this.reportdatatranfer.bac_id;
-    this.start_date = this.reportdatatranfer.start_date;
-    this.end_date = this.reportdatatranfer.end_date;
-  }
-
-  ionViewDidEnter(){
-    this.bac_id = this.reportdatatranfer.bac_id;
-    this.start_date = this.reportdatatranfer.start_date;
-    this.end_date = this.reportdatatranfer.end_date;
-  }
-
-  ionViewWillEnter(){
-    // console.log('summerize loaded');
+  // private bac_id:number;
+  // private start_date:string;
+  // private end_date:string;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,  public MReportIncomeProvider: MReportIncomeProvider , public MReportPaymentProvider: MReportPaymentProvider, private reportdatatranfer: ReportDataTranferProvider) {
     // this.bac_id = this.reportdatatranfer.bac_id;
     // this.start_date = this.reportdatatranfer.start_date;
     // this.end_date = this.reportdatatranfer.end_date;
-    // console.log(this.bac_id);
-    // console.log(this.start_date);
-    // console.log(this.end_date);
->>>>>>> zoom
   }
   
-  ionViewDidLoad() {
-    this.bac_id = this.reportdatatranfer.bac_id;
-    this.start_date = this.reportdatatranfer.start_date;
-    this.end_date = this.reportdatatranfer.end_date;
+  // ionViewDidLeave(){
+  //   this.ngOnInit();
+  // }
 
-    console.log('ionViewDidLoad SummarizeReportPage');
-  }
+  // ionViewDidEnter(){
+  //   this.ngOnInit();
+  // }
+
+  // ionViewDidLoad() {
+  //   this.ngOnInit();
+  // }
   
   ngOnInit(){
-    this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
+    // let b_id = this.bac_id;
+    // let s_date = this.start_date;
+    // let e_date = this.end_date;
+    // console.log(s_date);
+    // console.log(e_date);
+    // this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
+    //   this.income_report = response;
+    //   console.log(response);
+    // });
+    // this.MReportPaymentProvider.get_by_pay_date().subscribe((response) => {
+    //   this.payment_report = response;
+    //   console.log(response);
+    // });
+
+    this.MReportIncomeProvider.get_income_by_rangedate_and_bac().subscribe((response) => {
       this.income_report = response;
       console.log(response);
     });
-    this.MReportPaymentProvider.get_by_pay_date().subscribe((response) => {
+    this.MReportPaymentProvider.get_by_pay_bac_id_and_date().subscribe((response) => {
       this.payment_report = response;
       console.log(response);
     });

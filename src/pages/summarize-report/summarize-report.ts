@@ -21,6 +21,9 @@ import { MReportPaymentProvider } from '../../providers/m-report-payment/m-repor
 export class SummarizeReportPage implements OnInit{
   income_report: Report_inc[]; 
   payment_report: Report_pay[]; 
+  sum_inc : number = 0;
+  sum_pay : number = 0;
+  result : number = 0;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,  public MReportIncomeProvider: MReportIncomeProvider , public MReportPaymentProvider: MReportPaymentProvider) {
   }
@@ -33,22 +36,43 @@ export class SummarizeReportPage implements OnInit{
     this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
       this.income_report = response;
       console.log(response);
+      var inc_length = this.income_report.length;
+      for(let i=0;i<inc_length;i++){
+        this.sum_inc += + (this.income_report[i].inc_amount);
+      }
+      this.result = this.sum_inc - this.sum_pay;
+      console.log(this.sum_inc);
     });
     this.MReportPaymentProvider.get_by_pay_date().subscribe((response) => {
       this.payment_report = response;
       console.log(response);
+      var pay_length = this.payment_report.length;
+      for(let i=0;i<pay_length;i++){
+        this.sum_pay += + (this.payment_report[i].pay_amount);
+      }
+      this.result = this.sum_inc - this.sum_pay;
+      console.log(this.sum_pay);
     });
   }
 
-  get_sum_income(){
-    var sum_total = 0;
-    var y =0;
-    for (let i=0; i<this.income_report.length; i++) {
-        y = +(this.income_report[i].inc_amount);
-        sum_total += y;
-    }
-      return sum_total.toFixed(2);
-  }
+  // get_sum_payment(){
+  //   var sum_total = 0;
+  //   var y =0;
+  //   for (let i=0; i<this.payment_report.length; i++) {
+  //       y = +(this.payment_report[i].pay_amount);
+  //       sum_total += y;
+  //   }
+  //     return sum_total.toFixed(2);
+  // }
+
+  // get_sum_income(){
+  //   var sum_inc = 0;
+  //   this.income.forEach(function(value){
+  //       sum_inc += value.inc_amount;
+  //   });
+  //   return sum_inc;
+  // }
+
 
   show_alert_del(obj){
     const confirm = this.alertCtrl.create({

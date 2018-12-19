@@ -63,6 +63,9 @@
       <p text-right style="font-size:20px;" *ngIf="get_sum() > 0" ion-text color="dark"> {{get_sum()}} </p>
       <p text-right style="font-size:20px;" *ngIf="get_sum() < 0" ion-text color="danger"> {{get_sum()}} </p> -->
       <ion-label text-right> ยอดสุดท้าย </ion-label>
+      <ion-label text-right *ngIf = "result < 0" ion-text color="danger"> {{result}}</ion-label>
+      <ion-label text-right *ngIf = "result > 0" ion-text color="dark"> {{result}}</ion-label>
+      <!-- <ion-label text-right *ngIf "result  0" ion-text color="dark"> {{result}}</ion-label> -->
       <!-- <ion-label text-right style="font-size:20px;" *ngIf="get_sum_income() > 0" ion-text color="dark"> {{get_sum_income()}} </ion-label>
       <ion-label text-right style="font-size:20px;" *ngIf="get_sum_income() < 0" ion-text color="danger"> {{get_sum_income()}} </ion-label> -->
     </ion-item>

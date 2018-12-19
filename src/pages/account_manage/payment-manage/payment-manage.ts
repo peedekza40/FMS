@@ -32,15 +32,16 @@ export class PaymentManagePage implements OnInit{
   ngOnInit() {
     this.MReportPaymentProvider.get_by_pay_date().subscribe((response) => {
       this.report = response;
-      console.log(response);
+      //console.log(response);
     });
   }
 
-  openEditModal(id){
-    const myModal = this.editPaymentModal.create('EditPaymentModalPage', {pay_id:id});
-    myModal.present();
+  openPayEditModal(id){
+    console.log(id);
+    const myPayEditModal = this.editPaymentModal.create('EditPaymentModalPage', {pay_id:id});
+    myPayEditModal.present();
 
-    myModal.onWillDismiss((data) => {
+    myPayEditModal.onWillDismiss((data) => {
       //console.log(data);
       if(data){
         var pay_id = data[0].pay_id;
@@ -62,7 +63,7 @@ export class PaymentManagePage implements OnInit{
       }
     });
 
-    myModal.onDidDismiss(() => {
+    myPayEditModal.onDidDismiss(() => {
       this.navCtrl.setRoot(this.navCtrl.getActive().component);
     });
   }
@@ -122,6 +123,7 @@ export class PaymentManagePage implements OnInit{
   }
 
 }
+
 interface Report_pay{
   pay_code : string;
   desc_description: string;

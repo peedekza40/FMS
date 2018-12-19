@@ -23,11 +23,11 @@ export class EditModalPage {
   inc_id = 0;
 
   constructor(public navCtrl: NavController, 
-    public navParams: NavParams, 
-    public view: ViewController, 
-    public MDescriptionProvider: MDescriptionProvider, 
-    public MReportIncomeProvider:MReportIncomeProvider, 
-    public MBankaccountProvider:MBankaccountProvider) {
+              public navParams: NavParams, 
+              public view: ViewController, 
+              public MDescriptionProvider: MDescriptionProvider, 
+              public MReportIncomeProvider:MReportIncomeProvider, 
+              public MBankaccountProvider:MBankaccountProvider) {
   }
 
   ionViewDidLoad() {
@@ -51,7 +51,7 @@ export class EditModalPage {
     
     this.MReportIncomeProvider.get_by_inc_id(inc_id).subscribe((response) => {
       this.inc_obj = response;
-      console.log(response);
+      //console.log(response);
     });
   
   }

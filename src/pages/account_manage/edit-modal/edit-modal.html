@@ -3,12 +3,11 @@
   <ion-navbar>
     <ion-title float-right>EditModal</ion-title>
     <ion-buttons>
-      <button ion-button navPop> ยกเลิก </button>
+      <button ion-button navPop><ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon></button>
     </ion-buttons>
   </ion-navbar>
 
 </ion-header>
-
 
 <ion-content padding>
   <ion-label float-right>แก้ไขรายการบัญชี</ion-label>
@@ -17,12 +16,12 @@
             <ion-label>เลขที่รายการบัญชี</ion-label>
             <ion-input type="text" [(ngModel)]="obj.inc_code" clearInput floating></ion-input> <!--[(ngModel)]="inc_obj"-->
           </ion-item>
-
+          <br>
           <ion-item>
             <ion-label>วันที่ลงรายการบัญชี</ion-label>
             <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="obj.inc_date"></ion-datetime>
           </ion-item>
-  
+          <br>
           <ion-item>
             <ion-label>เลือกบัญชีธนาคาร</ion-label>
             <ion-select [(ngModel)]="obj.inc_bac_id" multiple="false">
@@ -36,7 +35,7 @@
                 </div>
             </ion-select>
           </ion-item>
-  
+          <br>
           <ion-item>
             <ion-label>เล่มที่ใบเสร็จ</ion-label>
             <ion-input type="text" [(ngModel)]="obj.inc_receipt" clearInput floating></ion-input>
@@ -45,7 +44,7 @@
             <ion-label>เลขที่ใบเสร็จ</ion-label>
             <ion-input type="text" [(ngModel)]="obj.inc_receipt_code" clearInput floating></ion-input>
           </ion-item>
-  
+          <br>
           <ion-item>
             <ion-label>คำอธิบาย</ion-label>
             <ion-select [(ngModel)]="obj.inc_desc_id" multiple="false">
@@ -59,16 +58,17 @@
               </div>
             </ion-select>
           </ion-item>
-
+          <br>
           <ion-item>
             <ion-label>จำนวนเงิน</ion-label>
             <ion-input type="number" [(ngModel)]="obj.inc_amount" clearInput floating></ion-input>
           </ion-item>
-
+          <br>
           <ion-item>
               <ion-label>วันที่ใบเสร็จ</ion-label>
               <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="obj.inc_receipt_date"></ion-datetime>
           </ion-item>
+          <br>
         </ion-list>
       
       <button ion-button float-right (click)="btnSubmit()">ยืนยัน</button>

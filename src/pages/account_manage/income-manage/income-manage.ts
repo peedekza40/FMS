@@ -17,6 +17,7 @@ import * as moment from 'moment';
 })
 export class IncomeManagePage implements OnInit {
   income_report: Report_inc[];
+  date_para: Date;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,  
@@ -29,6 +30,8 @@ export class IncomeManagePage implements OnInit {
     //console.log('ionViewDidLoad IncomeManagePage');
   }
   ngOnInit() {
+    var date = this.date_para = this.navParams.get('myDate');
+    console.log(date);
     this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
       this.income_report = response;
       //console.log(response);

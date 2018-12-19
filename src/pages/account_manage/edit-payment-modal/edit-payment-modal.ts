@@ -23,11 +23,11 @@ export class EditPaymentModalPage {
   pay_id = 0;
 
   constructor(public navCtrl: NavController, 
-    public navParams: NavParams, 
-    public view: ViewController, 
-    public MDescriptionProvider: MDescriptionProvider, 
-    public MReportPaymentProvider:MReportPaymentProvider, 
-    public MBankaccountProvider:MBankaccountProvider) {
+              public navParams: NavParams, 
+              public view: ViewController, 
+              public MDescriptionProvider: MDescriptionProvider, 
+              public MReportPaymentProvider:MReportPaymentProvider, 
+              public MBankaccountProvider:MBankaccountProvider) {
   }
 
   ionViewDidLoad() {
@@ -51,7 +51,7 @@ export class EditPaymentModalPage {
     
     this.MReportPaymentProvider.get_by_pay_id(pay_id).subscribe((response) => {
       this.pay_obj = response;
-      console.log(this.pay_obj);
+      //console.log(this.pay_obj);
     });
   
   }

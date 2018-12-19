@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController} from 'ionic-angular';
 import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
 import * as moment from 'moment';
+import { TmanagePage } from '../tmanage/tmanage';
 
 /**
  * Generated class for the IncomeManagePage page.
@@ -10,7 +11,9 @@ import * as moment from 'moment';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+  name: 'income-manage-page'
+})
 @Component({
   selector: 'page-income-manage',
   templateUrl: 'income-manage.html',
@@ -30,12 +33,13 @@ export class IncomeManagePage implements OnInit {
     //console.log('ionViewDidLoad IncomeManagePage');
   }
   ngOnInit() {
-    var date = this.date_para = this.navParams.get('myDate');
+    var date = this.date_para = this.navParams.get('date');
     console.log(date);
-    this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
+    this.MReportIncomeProvider.get_by_inc_date(date).subscribe((response) => {
       this.income_report = response;
-      //console.log(response);
+      console.log(response);
     });
+    
   } 
   removeObjs(objs) {
     objs.forEach((element, index) => {

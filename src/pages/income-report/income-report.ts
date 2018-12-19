@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-income';
+import * as moment from 'moment';
 
 /**
  * Generated class for the IncomeReportPage page.
@@ -27,11 +28,19 @@ export class IncomeReportPage implements OnInit{
   ngOnInit() {
     this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
       this.report_income = response;
-      console.log(this.report_income[1].inc_amount);
+      let i:number = 0;
+      this.report_income.forEach((element) => {
+        console.log(element.inc_amount);
+        i += element.inc_amount;
+        console.log(i);
+      });
+      //console.log(this.report_income.keys(response).length); 
     });
   }
 
-
+  convert_date(date:string){
+    return moment(date).format('DD/MM/YYYY');
+  }
   /*get_sum(){
     var sum_total = 0;
     var y =0;
@@ -43,7 +52,15 @@ export class IncomeReportPage implements OnInit{
       return sum_total;
       
   }*/
-  
+  /*get_sum(){
+    var sum_total = 0;
+    var y =0;
+    for (let i=0; i<this.report_income.length; i++) {
+        y = +(this.report_income[i].inc_amount);
+        sum_total += y;
+    }
+    return sum_total.toFixed(2);  
+  }*/
 
 }
 interface Report_income{

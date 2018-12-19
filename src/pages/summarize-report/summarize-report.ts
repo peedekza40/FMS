@@ -5,6 +5,7 @@ import { defaultIterableDiffers } from '@angular/core/src/change_detection/chang
 import { AlertController } from 'ionic-angular';
 import { MReportIncomeProvider } from '../../providers/m-report-income/m-report-income';
 import { MReportPaymentProvider } from '../../providers/m-report-payment/m-report-payment';
+import * as moment from 'moment';
 
 /**
  * Generated class for the SummarizeReportPage page.
@@ -54,6 +55,9 @@ export class SummarizeReportPage implements OnInit{
       console.log(this.sum_pay);
     });
   }
+  convert_date(date:string){
+    return moment(date).format('DD/MM/YYYY');
+  }//convert_date
 
   show_alert_del(obj){
     const confirm = this.alertCtrl.create({

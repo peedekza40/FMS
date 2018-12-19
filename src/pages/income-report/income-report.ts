@@ -32,8 +32,8 @@ export class IncomeReportPage implements OnInit{
       this.report_income.forEach((element) => {
         console.log(element.inc_amount);
         i += element.inc_amount;
-        console.log(i);
       });
+      console.log('Sum total : '+i);
       //console.log(this.report_income.keys(response).length); 
     });
   }

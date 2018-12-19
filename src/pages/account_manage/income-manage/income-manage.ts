@@ -21,7 +21,7 @@ export class IncomeManagePage implements OnInit {
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,  
     public MReportIncomeProvider: MReportIncomeProvider, 
-    public editModal:ModalController, 
+    public editIncomeModal:ModalController, 
     public view:ViewController) {
   }
 
@@ -43,7 +43,7 @@ export class IncomeManagePage implements OnInit {
   }
 
   openEditModal(id){
-    const myModal = this.editModal.create('EditModalPage', {inc_id:id});
+    const myModal = this.editIncomeModal.create('EditModalPage', {inc_id:id});
     myModal.present();
 
     myModal.onWillDismiss((data) => {

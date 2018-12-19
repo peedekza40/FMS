@@ -29,7 +29,7 @@ export class TmanagePage implements OnInit {
   }
   ngOnInit() {
   } 
-  
+
   testdata(){
     console.log(this.myDate);
   }

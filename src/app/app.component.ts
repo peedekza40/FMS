@@ -1,11 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform , ModalController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ReportPage } from '../pages/report/report';
 import { TmanagePage } from '../pages/account_manage/tmanage/tmanage'; 
-import { AddAccountPage } from '../pages/account_manage/add-account/add-account'; 
 
 @Component({
   templateUrl: 'app.html'
@@ -17,15 +16,14 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public addModal:ModalController) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Report', component: ReportPage  },
-      { title: 'ตารางลงรายการบัญชี', component: TmanagePage  },
-      { title: 'add_account', component: AddAccountPage }
+      { title: 'ตารางลงรายการบัญชี', component: TmanagePage  }
     ];
 
   }
@@ -43,5 +41,10 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  openAddModal(){
+    const addModal = this.addModal.create('AddAccountPage');
+    addModal.present();
   }
 }

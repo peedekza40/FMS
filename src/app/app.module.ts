@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TmanagePage } from '../pages/account_manage/tmanage/tmanage'; 
-import { AddAccountPage } from '../pages/account_manage/add-account/add-account'; 
 import { ReportPage } from '../pages/report/report';
 import { SummarizeReportPage } from '../pages/summarize-report/summarize-report';
 import { IncomeReportPage } from '../pages/income-report/income-report';
@@ -33,7 +32,7 @@ import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
     IncomeReportPage,
     PaymentReportPage,
     IncomeManagePage,
-    PaymentManagePage,
+    PaymentManagePage
   ],
   imports: [
     BrowserModule,
@@ -51,7 +50,7 @@ import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
     IncomeReportPage,
     PaymentReportPage,
     IncomeManagePage,
-    PaymentManagePage,
+    PaymentManagePage
   ],
   providers: [
     StatusBar,

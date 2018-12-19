@@ -17,6 +17,10 @@ import * as moment from 'moment';
 })
 export class IncomeManagePage implements OnInit {
   income_report: Report_inc[];
+  inc_id = 0;
+  inc_obj:report_inc;
+  myDate : string;
+  date: string;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,  
@@ -31,7 +35,7 @@ export class IncomeManagePage implements OnInit {
   ngOnInit() {
     this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
       this.income_report = response;
-      //console.log(response);
+      console.log(response);
     });
   } 
   // removeObjs_income(objs_i) {
@@ -69,6 +73,15 @@ export class IncomeManagePage implements OnInit {
     });
     confirm.present();
   }
+  testdate(){
+   //this.date=this.myDate;
+  // console.log(this.date);
+    this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
+     this.inc_obj = response;
+     console.log(response);
+   });
+ 
+   }
 
   openEditModal(id){
     const myModal = this.editModal.create('EditModalPage', {inc_id:id});
@@ -109,4 +122,18 @@ interface Report_inc{
   inc_code: string;
   desc_description: string;
   inc_amount: number;
+}
+interface report_inc{
+  inc_id:number;
+  inc_date:Date;
+  inc_code: string;
+  inc_receipt: string;
+  inc_receipt_code: string;
+  inc_receipt_date: Date;
+  inc_desc_id: number;
+  inc_bac_id: number;
+  inc_amount: number;
+  inc_detail: string;
+  inc_status: string;
+  inc_editor: number;
 }

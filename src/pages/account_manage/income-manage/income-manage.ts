@@ -72,6 +72,7 @@ export class IncomeManagePage implements OnInit {
       this.navCtrl.setRoot(this.navCtrl.getActive().component);
     });
   }
+  
 
 }
 

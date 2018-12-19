@@ -19,13 +19,13 @@
            <ion-label text-right >+ {{objs.inc_amount}}</ion-label>
           </ion-item>
           <ion-item-options side="right">
-              <button ion-button color="danger" (click)="delete(item)">ลบข้อมูล</button>
+              <button ion-button color="danger" (click)="show_alert_del(objs)">ลบข้อมูล</button>
           </ion-item-options>
           <ion-item-options side="left">
             <button ion-button (click)="info(item)">แก้ไขข้อมูล</button>
         </ion-item-options>
         </ion-item-sliding>
       </ion-list>
-      <ion-item > <ion-label text-right style="font-size:16px;"> รวม <!--{{get_sum()}}--> </ion-label></ion-item>
+      <ion-item > <ion-label text-right style="font-size:16px;"> รวม {{get_sum()}} </ion-label></ion-item>
       
 </ion-content>

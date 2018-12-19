@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AddIncomePage } from '../../../pages/account_manage/add-account/add-income/add-income';
+import { AddPaymentPage } from '../../../pages/account_manage/add-account/add-payment/add-payment';
 
 /**
  * Generated class for the AddAccountPage page.
@@ -15,7 +17,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddAccountPage {
   
-  public todo = {};
+  tab_income = AddIncomePage;
+  tab_payment = AddPaymentPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

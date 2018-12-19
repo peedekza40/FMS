@@ -14,6 +14,8 @@ import { IncomeReportPage } from '../pages/income-report/income-report';
 import { PaymentReportPage } from '../pages/payment-report/payment-report';
 import { IncomeManagePage } from '../pages/account_manage/income-manage/income-manage';
 import { PaymentManagePage } from '../pages/account_manage/payment-manage/payment-manage';
+import { AddIncomePage } from '../pages/account_manage/add-account/add-income/add-income';
+import { AddPaymentPage } from '../pages/account_manage/add-account/add-payment/add-payment';
 /*------------------------------providers------------------------------*/
 import { MReportIncomeProvider } from '../providers/m-report-income/m-report-income';
 import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-payment'; 
@@ -32,7 +34,9 @@ import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
     IncomeReportPage,
     PaymentReportPage,
     IncomeManagePage,
-    PaymentManagePage
+    PaymentManagePage,
+    AddIncomePage,
+    AddPaymentPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,9 @@ import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
     IncomeReportPage,
     PaymentReportPage,
     IncomeManagePage,
-    PaymentManagePage
+    PaymentManagePage,
+    AddIncomePage,
+    AddPaymentPage
   ],
   providers: [
     StatusBar,

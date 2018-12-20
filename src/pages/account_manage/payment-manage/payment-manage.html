@@ -15,7 +15,7 @@
  
 <ion-content padding>
 <!-- Header table -->  
-<br><br><br><br><br><br><br><br>     
+<br><br><br><br><br><br><br><br><br><br>
 <ion-list>
   <ion-item-sliding *ngFor="let objs of report; let i = index">
     <ion-item>
@@ -24,14 +24,14 @@
           <ion-label style="font-size: 12px;  text-align: right; color:red;">-{{objs.pay_amount | number : fractionSize}}</ion-label> 
     </ion-item>
     <ion-item-options side="left"> 
-      <button ion-button color="primary" (click)="show_alert_edit(objs)">
-        <ion-icon name="edit"></ion-icon>
+      <button ion-button color="light" (click)="openPayEditModal(objs.pay_id)">
+        <ion-icon name="brush"></ion-icon>
         แก้ไขข้อมูล
       </button>
     </ion-item-options>
     <ion-item-options side="right"> <!-- Slide bar delete -->
       <button ion-button color="danger" (click)="show_alert_del(objs)">
-        <ion-icon name="delete"></ion-icon>
+        <ion-icon name="trash"></ion-icon>
         ลบข้อมูล
       </button>
     </ion-item-options>

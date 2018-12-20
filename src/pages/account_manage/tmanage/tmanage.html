@@ -18,9 +18,11 @@
             ></ion-label
           >
           <ion-datetime
-            displayFormat="MM/DD/YYYY"
+            displayFormat="DD/MM/YYYY"
             [(ngModel)]="myDate"
             (ngModelChange)="testdate()"
+            cancelText = "ยกเลิก"
+            doneText = "ค้นหา"
           >
           </ion-datetime>
         </ion-item>

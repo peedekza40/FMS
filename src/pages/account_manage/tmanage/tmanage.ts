@@ -12,6 +12,7 @@ import * as moment from 'moment';
  */
 
 @IonicPage()
+
 @Component({
   selector: 'page-tmanage',
   templateUrl: 'tmanage.html',
@@ -20,18 +21,33 @@ export class TmanagePage implements OnInit {
   myDate : string;
   tab2Root = IncomeManagePage;
   tab3Root = PaymentManagePage;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public MReportIncomeProvider: MReportIncomeProvider) {
-    this.myDate = moment(new Date()).format('MMM Do YY');
+
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public MReportIncomeProvider: MReportIncomeProvider) {
+    //this.myDate = moment(new Date()).format('MMM Do YY');
+    //console.log(this.myDate);
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad TmanagePage');
   }
+
   ngOnInit() {
+    this.myDate = this.MReportIncomeProvider.date;
+    this.myDate = moment(this.myDate).format("YYYY-MM-DD");
+    //this.myDate = '2018-12-16';
+    //this.navCtrl.push(IncomeManagePage,{date:this.myDate});
+    //this.navCtrl.pop();
   } 
 
   testdate(){
-    console.log(this.myDate);
+    this.MReportIncomeProvider.set_date_val(this.myDate);
+    //this.myDate = moment(this.myDate).format("YYYY-MM-DD");
+    // this.navCtrl.push(IncomeManagePage);
+    this.navCtrl.push(TmanagePage);
+    this.myDate = this.MReportIncomeProvider.date;
+    //this.navCtrl.pop();
   }
 
 }

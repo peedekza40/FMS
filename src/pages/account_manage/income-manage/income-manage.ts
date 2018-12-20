@@ -20,23 +20,28 @@ export class IncomeManagePage implements OnInit {
   inc_id = 0;
   inc_obj:report_inc;
   myDate : string;
-  date: string;
+  date_para: string;
 
   constructor(public navCtrl: NavController, 
-    public navParams: NavParams,  
-    public MReportIncomeProvider: MReportIncomeProvider, 
-    public editModal:ModalController, 
-    public view:ViewController) {
+              public navParams: NavParams,  
+              public MReportIncomeProvider: MReportIncomeProvider, 
+              public editIncomeModal:ModalController, 
+              public view:ViewController) {
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad IncomeManagePage');
   }
   ngOnInit() {
-    this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
+    var date = this.MReportIncomeProvider.date;
+    //var date = this.date_para = this.navParams.get('date');
+    //var date = '2018-12-16';
+    console.log(date);
+    this.MReportIncomeProvider.get_by_inc_date(date).subscribe((response) => {
       this.income_report = response;
       console.log(response);
     });
+    
   } 
   removeObjs(objs) {
     objs.forEach((element, index) => {
@@ -58,7 +63,7 @@ export class IncomeManagePage implements OnInit {
    }
 
   openEditModal(id){
-    const myModal = this.editModal.create('EditModalPage', {inc_id:id});
+    const myModal = this.editIncomeModal.create('EditModalPage', {inc_id:id});
     myModal.present();
   
 
@@ -88,6 +93,10 @@ export class IncomeManagePage implements OnInit {
       this.navCtrl.setRoot(this.navCtrl.getActive().component);
     });
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Boom
 }
 
 

@@ -1,0 +1,62 @@
+<!--
+  Generated template for the AddIncomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list >
+      <ion-item>
+        <ion-label>เลขที่รายการบัญชี</ion-label>
+        <ion-input type="text" disabled clearInput></ion-input> 
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>วันที่ลงรายการบัญชี</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" ></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>เลือกบัญชีธนาคาร</ion-label>
+        <ion-select multiple="false">
+            <div>
+                  <ion-option></ion-option>
+            </div>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>เล่มที่ใบเสร็จ</ion-label>
+        <ion-input type="text" clearInput></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>เลขที่ใบเสร็จ</ion-label>
+        <ion-input type="text" clearInput></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>คำอธิบาย</ion-label>
+        <ion-select  multiple="false">
+          <div *ngFor="">
+            <ion-option  [value]="" selected="true"></ion-option>
+          </div>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>จำนวนเงิน</ion-label>
+        <ion-input type="number" clearInput></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>วันที่ใบเสร็จ</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
+      </ion-item>
+    </ion-list>
+  
+  <button ion-button float-right>ยืนยัน</button>
+</ion-content>

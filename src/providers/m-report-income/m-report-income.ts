@@ -31,4 +31,24 @@ export class MReportIncomeProvider {
      inc_receipt_date:inc_receipt_date, inc_amount:inc_amount, inc_detail:inc_detail, inc_desc_id:inc_desc_id, inc_bac_id:inc_bac_id, inc_status:inc_status, 
      inc_editor:inc_editor}).pipe(map((res)=>res.json()));
   }
+
+  insert_income(data){
+    return this.http.post('http://10.80.6.160:1068/insert_income',{
+        inc_code: data.inc_code, 
+        inc_date: data.inc_date, 
+        inc_receipt: data.inc_receipt, 
+        inc_receipt_code: data.inc_receipt_code,
+        inc_receipt_date: data.inc_receipt_date, 
+        inc_amount: data.inc_amount, 
+        inc_detail: data.inc_detail, 
+        inc_desc_id: data.inc_desc_id, 
+        inc_bac_id: data.inc_bac_id, 
+        inc_status: data.inc_status, 
+        inc_editor: data.inc_editor
+    }).pipe(map((res)=>res.json()));
+  }
+
+  get_last_inc_code(){
+    return this.http.get('http://10.80.6.160:1068/get_last_inc_code').pipe(map((res)=>res.json()));
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController} from 'ionic-angular';
 import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
+import { RetrieveDataProvider } from '../../../providers/retrieve-data/retrieve-data';
 import * as moment from 'moment';
 
 /**
@@ -24,15 +25,15 @@ export class IncomeManagePage implements OnInit {
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,  
-    public MReportIncomeProvider: MReportIncomeProvider, 
+    public MReportIncomeProvider: MReportIncomeProvider,
+    public RetrieveDataProvider: RetrieveDataProvider,
     public editModal:ModalController, 
     public view:ViewController) {
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad IncomeManagePage');
-    // this.temp=this.navParams.get("mydate");
-    // console.log(this.temp);
+    console.log(this.RetrieveDataProvider.getData());
   }
   ngOnInit() {
     var date = this.date_para = this.navParams.get('date');

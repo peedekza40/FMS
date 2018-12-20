@@ -17,6 +17,7 @@ import { AlertController } from 'ionic-angular';
 })
 export class PaymentManagePage implements OnInit{
   report:Report_pay[]
+  //date_para: Date;
   constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController , public MReportPaymentProvider:MReportPaymentProvider) {
   }
 
@@ -24,9 +25,11 @@ export class PaymentManagePage implements OnInit{
     console.log('ionViewDidLoad PaymentManagePage');
   }
   ngOnInit() {
+    // var date = this.date_para = this.navParams.get('date');
+    // console.log(date);
     this.MReportPaymentProvider.get_by_pay_date().subscribe((response) => {
       this.report = response;
-      console.log(response);
+     // console.log(response);
     });
   }
 

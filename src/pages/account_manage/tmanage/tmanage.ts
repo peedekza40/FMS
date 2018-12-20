@@ -34,6 +34,7 @@ export class TmanagePage implements OnInit {
     //console.log(this.myDate);
     this.myDate = moment(this.myDate).format("YYYY-MM-DD");
     this.navCtrl.push(IncomeManagePage,{date:this.myDate});
+    //this.navCtrl.push(PaymentManagePage,{date:this.myDate});
     //this.navCtrl.push(TmanagePage);
   }
 

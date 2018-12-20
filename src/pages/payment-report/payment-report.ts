@@ -112,6 +112,7 @@ export class PaymentReportPage {
             })
             console.log(id);
             console.log('Agree clicked');
+            this.navCtrl.push(PaymentReportPage),{},{animate:false}; 
           }//handler
         }
       ]

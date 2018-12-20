@@ -129,6 +129,7 @@ export class SummarizeReportPage implements OnInit{
             })
             console.log(id);
             console.log('Agree clicked');
+            this.navCtrl.push(SummarizeReportPage),{},{animate:false};
           }//handler
         }
       ]

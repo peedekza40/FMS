@@ -120,6 +120,7 @@ export class IncomeReportPage implements OnInit{
             })
             console.log(id);
             console.log('Agree clicked');
+            this.navCtrl.push(IncomeReportPage),{},{animate:false};
           }//handler
         }
       ]

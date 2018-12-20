@@ -12,7 +12,7 @@ import { TmanagePage } from '../pages/account_manage/tmanage/tmanage';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
- 
+
   rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
@@ -23,7 +23,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Report', component: ReportPage  },
+      { title: 'รายงานรายการบัญชี', component: ReportPage  },
       { title: 'ตารางลงรายการบัญชี', component: TmanagePage  },
     ];
 

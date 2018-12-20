@@ -19,6 +19,7 @@ import * as moment from 'moment';
 })
 export class TmanagePage implements OnInit {
   myDate : any;
+  tabIndex: Number;
   tab2Root = IncomeManagePage;
   tab3Root = PaymentManagePage;
   constructor(public navCtrl: NavController, public navParams: NavParams, 
@@ -36,6 +37,7 @@ export class TmanagePage implements OnInit {
     this.myDate = this.RetrieveDataProvider.date;
     this.myDate = moment(this.myDate).format("YYYY-MM-DD");
   } 
+
 
   testdate(){
     this.RetrieveDataProvider.RetrieveData(this.myDate);

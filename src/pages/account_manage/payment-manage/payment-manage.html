@@ -20,7 +20,7 @@
     <ion-item>
           <ion-label style="font-size: 12px;  text-align: left;">{{objs.pay_code}}</ion-label>
           <ion-label style="font-size: 12px;  text-align: center;">{{objs.desc_description}}</ion-label>
-          <ion-label style="font-size: 12px;  text-align: right; color:red;">-{{objs.pay_amount | number : fractionSize}}</ion-label> 
+          <ion-label style="font-size: 12px;  text-align: right; color:red;">-{{objs.pay_amount | currency :' '}}</ion-label> 
     </ion-item>
     <ion-item-options side="left"> 
       <button ion-button color="light" (click)="openPayEditModal(objs.pay_id)">

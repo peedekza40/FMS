@@ -25,7 +25,8 @@ export class PaymentManagePage implements OnInit{
     public navParams: NavParams,
     public alertCtrl: AlertController , 
     public MReportPaymentProvider:MReportPaymentProvider,
-    public RetrieveDataProvider: RetrieveDataProvider,) {
+    public RetrieveDataProvider: RetrieveDataProvider,
+    public editPaymentModal: ModalController) {
   }
 
   ionViewDidLoad() {

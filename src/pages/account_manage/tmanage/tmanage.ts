@@ -35,7 +35,7 @@ export class TmanagePage implements OnInit {
 
   testdate(){
     this.RetrieveDataProvider.RetrieveData(this.myDate);
-    this.navCtrl.push(TmanagePage);
+    this.navCtrl.push(TmanagePage,{},{animate:false});
   }
 
 }

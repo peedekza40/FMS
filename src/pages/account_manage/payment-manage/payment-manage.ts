@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MReportPaymentProvider } from '../../../providers/m-report-payment/m-report-payment';
+import { RetrieveDataProvider } from '../../../providers/retrieve-data/retrieve-data';
 import { AlertController } from 'ionic-angular';
 
 /**
@@ -17,11 +18,14 @@ import { AlertController } from 'ionic-angular';
 })
 export class PaymentManagePage implements OnInit{
   report:Report_pay[]
-  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController , public MReportPaymentProvider:MReportPaymentProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController , 
+    public MReportPaymentProvider:MReportPaymentProvider,
+    public RetrieveDataProvider: RetrieveDataProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PaymentManagePage');
+    //console.log('ionViewDidLoad PaymentManagePage');
+    console.log(this.RetrieveDataProvider.getData());
   }
   ngOnInit() {
     this.MReportPaymentProvider.get_by_pay_date().subscribe((response) => {

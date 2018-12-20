@@ -15,8 +15,15 @@ export class MReportIncomeProvider {
   }
 
   get_by_inc_date() {
-    return this.http.post('http://10.80.6.160:1068/get_by_inc_date',{date: new Date('2018-12-16')}).pipe(map((res)=>res.json()));
-    
+    return this.http.post('http://10.80.6.160:1068/get_by_inc_date',{date: new Date('2018-12-16')}).pipe(map((res)=>res.json())); 
+  }
+
+  get_income_by_rangedate_and_bac(bac_id,startDate,endDate) {
+    return this.http.post('http://10.80.6.160:1068/get_income_by_rangedate_and_bac',{bac_id: bac_id,startDate: startDate,endDate: endDate}).pipe(map((res)=>res.json()));
+  }
+
+  delete_income(inc_id) {
+    return this.http.put('http://10.80.6.160:1068/delete_income',{inc_id: inc_id}).pipe(map((res)=>res.json()));
   }
 
 }

@@ -11,11 +11,16 @@
     <ion-toolbar color="primary">
         <button ion-button menuToggle slot="start">
             <ion-icon name="menu"></ion-icon>
-          </button>
+        </button>
         <ion-title text-center>
           <b style="color:white; font-size: 30px" >FMS</b>
         </ion-title>
-  </ion-toolbar>
+        <ion-buttons end>
+          <button ion-button icon-only (click)="openAddModal()">
+            <ion-icon name="md-add-circle" style="color:white; font-size:30px;" ></ion-icon>
+          </button>
+        </ion-buttons>
+  </ion-toolbar>  
 </ion-header>
 <ion-content>
   <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->

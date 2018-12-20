@@ -4,11 +4,30 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<!--
 <ion-header>
 
 </ion-header>
-
+-->
 
 <ion-content padding>
-  <!-- <ion-label> รายจ่าย </ion-label> -->
+  <ion-list>
+    <ion-item> <ion-label text-left><b>รายละเอียด</b></ion-label><ion-label text-Right><b>จำนวนเงิน</b></ion-label> </ion-item>
+      <ion-item-sliding *ngFor="let objs of report_payment; let i = index">
+        <ion-item>
+         <ion-label text-left><p ion-text color="dark" style="font-size:18px;">{{objs.pay_code}}</p><h5 ion-text color="gray" style="font-size:15px;">{{convert_date(objs.pay_date.substr(0,10))}}</h5></ion-label>
+         <ion-label text-right > {{objs.pay_amount}}</ion-label>
+        </ion-item>
+        <ion-item-options side="right">
+            <button ion-button color="danger" (click)="show_alert_del(objs)">ลบข้อมูล</button>
+        </ion-item-options>
+        <ion-item-options side="left">
+          <button ion-button (click)="info(item)">แก้ไขข้อมูล</button>
+      </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <ion-item > 
+      <ion-label text-center style="font-size:16px;" > รวม</ion-label>
+      <ion-label text-right style="font-size:16px;" > {{sum}} </ion-label>
+    </ion-item>
 </ion-content>

@@ -5,6 +5,7 @@ import { IncomeReportPage } from '../income-report/income-report';
 import { PaymentReportPage } from '../payment-report/payment-report';
 import { ModalssearchPage } from '../modalssearch/modalssearch';
 import { ReportDataTranferProvider } from '../../providers/report-data-tranfer/report-data-tranfer';
+import * as moment from 'moment';
 
 
 /**

@@ -26,8 +26,9 @@ export class TmanagePage implements OnInit {
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public MReportIncomeProvider: MReportIncomeProvider,
     public RetrieveDataProvider: RetrieveDataProvider) {
-   // this.myDate = moment(new Date()).format('MMM DoYY');
-  //  this.NowDate = moment(new Date()).format('Do MMMM YYYY');
+  //this.myDate = moment(new Date()).format('MMM DoYY');
+  //this.NowDate = moment(new Date()).format('Do MMMM YYYY');
+    this.tabIndex = this.RetrieveDataProvider.index;
   }
 
   ionViewDidLoad() {
@@ -40,10 +41,13 @@ export class TmanagePage implements OnInit {
     this.myDate = moment(this.myDate).format("YYYY-MM-DD");
   } 
 
-
   testdate(){
     this.RetrieveDataProvider.RetrieveData(this.myDate);
     this.navCtrl.push(TmanagePage,{},{animate:false});
+  }
+
+  changeTab(index){
+    this.RetrieveDataProvider.set_tabIndex(index);
   }
 
 }

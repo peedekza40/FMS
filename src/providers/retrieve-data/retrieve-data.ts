@@ -11,6 +11,7 @@ import * as moment from 'moment';
 @Injectable()
 export class RetrieveDataProvider {
   date: any;
+  index: Number;
 
   constructor(public http: Http) {
     this.date = new Date().toISOString();
@@ -23,6 +24,10 @@ export class RetrieveDataProvider {
   
   getData(){
     return this.date;
+  }
+
+  set_tabIndex(index){
+    this.index = index;
   }
 
 }

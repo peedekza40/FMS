@@ -26,7 +26,6 @@ export class TmanagePage implements OnInit {
               public navParams: NavParams, 
               public MReportIncomeProvider: MReportIncomeProvider) {
     //this.myDate = moment(new Date()).format('MMM Do YY');
-    this.myDate = new Date().toISOString();
     //console.log(this.myDate);
   }
 
@@ -35,14 +34,19 @@ export class TmanagePage implements OnInit {
   }
 
   ngOnInit() {
+    this.myDate = this.MReportIncomeProvider.date;
     this.myDate = moment(this.myDate).format("YYYY-MM-DD");
-    this.navCtrl.push(IncomeManagePage,{date:this.myDate});
+    //this.myDate = '2018-12-16';
+    //this.navCtrl.push(IncomeManagePage,{date:this.myDate});
     //this.navCtrl.pop();
   } 
 
   testdate(){
-    this.myDate = moment(this.myDate).format("YYYY-MM-DD");
-    this.navCtrl.push(IncomeManagePage,{date:this.myDate});
+    this.MReportIncomeProvider.set_date_val(this.myDate);
+    //this.myDate = moment(this.myDate).format("YYYY-MM-DD");
+    // this.navCtrl.push(IncomeManagePage);
+    this.navCtrl.push(TmanagePage);
+    this.myDate = this.MReportIncomeProvider.date;
     //this.navCtrl.pop();
   }
 

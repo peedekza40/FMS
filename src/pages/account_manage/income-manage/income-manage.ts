@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController} from 'ionic-angular';
 import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
 import * as moment from 'moment';
-import { TmanagePage } from '../tmanage/tmanage';
 
 /**
  * Generated class for the IncomeManagePage page.
@@ -11,29 +10,29 @@ import { TmanagePage } from '../tmanage/tmanage';
  * Ionic pages and navigation.
  */
 
-@IonicPage({
-  name: 'income-manage-page'
-})
+@IonicPage()
 @Component({
   selector: 'page-income-manage',
   templateUrl: 'income-manage.html',
 })
 export class IncomeManagePage implements OnInit {
   income_report: Report_inc[];
-  date_para: Date;
+  date_para: string;
 
   constructor(public navCtrl: NavController, 
-    public navParams: NavParams,  
-    public MReportIncomeProvider: MReportIncomeProvider, 
-    public editIncomeModal:ModalController, 
-    public view:ViewController) {
+              public navParams: NavParams,  
+              public MReportIncomeProvider: MReportIncomeProvider, 
+              public editIncomeModal:ModalController, 
+              public view:ViewController) {
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad IncomeManagePage');
   }
   ngOnInit() {
-    var date = this.date_para = this.navParams.get('date');
+    var date = this.MReportIncomeProvider.date;
+    //var date = this.date_para = this.navParams.get('date');
+    //var date = '2018-12-16';
     console.log(date);
     this.MReportIncomeProvider.get_by_inc_date(date).subscribe((response) => {
       this.income_report = response;
@@ -79,7 +78,6 @@ export class IncomeManagePage implements OnInit {
       this.navCtrl.setRoot(this.navCtrl.getActive().component);
     });
   }
-  
 
 }
 

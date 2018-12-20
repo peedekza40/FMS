@@ -14,7 +14,7 @@
           <ion-list *ngFor="let obj of pay_obj">
             <ion-item>
               <ion-label>เลขที่รายการบัญชี</ion-label>
-              <ion-input type="text" [(ngModel)]="obj.pay_code" clearInput floating></ion-input> <!--[(ngModel)]="pay_obj"-->
+              <ion-input type="text" [(ngModel)]="obj.pay_code" clearInput floating disabled="true"></ion-input> <!--[(ngModel)]="pay_obj"-->
             </ion-item>
             <br>
             <ion-item>

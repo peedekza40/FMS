@@ -14,7 +14,7 @@
         <ion-list *ngFor="let obj of inc_obj">
           <ion-item>
             <ion-label>เลขที่รายการบัญชี</ion-label>
-            <ion-input type="text" [(ngModel)]="obj.inc_code" clearInput floating></ion-input> <!--[(ngModel)]="inc_obj"-->
+            <ion-input type="text" [(ngModel)]="obj.inc_code" clearInput floating disabled="true"></ion-input> <!--[(ngModel)]="inc_obj"-->
           </ion-item>
           <br>
           <ion-item>

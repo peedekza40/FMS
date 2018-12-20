@@ -74,59 +74,38 @@ export class PaymentManagePage implements OnInit{
     });
   }
 
-  show_alert_del(objs){
+  show_alert_del_pay(obj,id){
     const confirm = this.alertCtrl.create({
       title: 'ลบรายการบัญชี',
-      message: 'ยืนยันการลบบัญชีหรือไม่',
+      message: 'ต้องการลบรายการบัญชี?',
       buttons: [
         {
           text: 'ยกเลิก',
           handler: () => {
             console.log('Disagree clicked');
-          }
+          }//handler
         },
         {
           text: 'ยืนยัน',
           handler: () => {
             this.report.forEach((element, index) => {
-                   if (element == objs) {
-                     this.report.splice(index, 1);
-                  }
+              if (element == obj) {
+                this.report.splice(index,1);
+              }//if
             });
+            this.MReportPaymentProvider.delete_payment(id).subscribe((response) => {
+              console.log(response);
+            })
+            console.log(id);
             console.log('Agree clicked');
-          }
+            this.navCtrl.push(PaymentManagePage),{},{animate:false};
+          }//handler
         }
       ]
     });
     confirm.present();
-  }
-  //show_alert_edit
-  show_alert_edit(objs){
-    const confirm = this.alertCtrl.create({
-      title: 'แก้ไขรายการบัญชี',
-      message: 'ยืนยันการแก้ไขบัญชีหรือไม่',
-      buttons: [
-        {
-          text: 'ยกเลิก',
-          handler: () => {
-            console.log('Disagree clicked');
-          }
-        },
-        {
-          text: 'ยืนยัน',
-          handler: () => {
-            this.report.forEach((element, index) => {
-                   if (element == objs) {
-                     this.report.splice(index, 1);
-                  }
-            });
-            console.log('Agree clicked');
-          }
-        }
-      ]
-    });
-    confirm.present();
-  }
+  }//show_alert_del
+
 
 }
 

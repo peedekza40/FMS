@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ViewController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ViewController, AlertController} from 'ionic-angular';
 import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
 import { RetrieveDataProvider } from '../../../providers/retrieve-data/retrieve-data';
 import * as moment from 'moment';
@@ -27,7 +27,8 @@ export class IncomeManagePage implements OnInit {
     public navParams: NavParams,  
     public MReportIncomeProvider: MReportIncomeProvider,
     public RetrieveDataProvider: RetrieveDataProvider,
-    public editIncomeModal:ModalController, 
+    public editIncomeModal:ModalController,
+    public alertCtrl: AlertController,
     public view:ViewController) {
       
   }
@@ -98,6 +99,38 @@ export class IncomeManagePage implements OnInit {
       this.navCtrl.setRoot(this.navCtrl.getActive().component);
     });
   }
+
+  show_alert_del_inc(obj,id){
+    const confirm = this.alertCtrl.create({
+      title: 'ลบรายการบัญชี',
+      message: 'ต้องการลบรายการบัญชี?',
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          handler: () => {
+            console.log('Disagree clicked');
+          }//handler
+        },
+        {
+          text: 'ยืนยัน',
+          handler: () => {
+            this.income_report.forEach((element, index) => {
+              if (element == obj) {
+                this.income_report.splice(index,1);
+              }//if
+            });
+            this.MReportIncomeProvider.delete_income(id).subscribe((response) => {
+              console.log(response);
+            })
+            console.log(id);
+            console.log('Agree clicked');
+            this.navCtrl.push(IncomeManagePage),{},{animate:false};
+          }//handler
+        }
+      ]
+    });
+    confirm.present();
+  }//show_alert_del
 }
 
 

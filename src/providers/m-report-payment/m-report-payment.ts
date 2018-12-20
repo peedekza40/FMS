@@ -36,5 +36,22 @@ export class MReportPaymentProvider {
      pay_receipt_date:pay_receipt_date, pay_amount:pay_amount, pay_detail:pay_detail, pay_desc_id:pay_desc_id, pay_bac_id:pay_bac_id, pay_status:pay_status, 
      pay_editor:pay_editor}).pipe(map((res)=>res.json()));
   }
-
+  insert_payment(data){
+    return this.http.post('http://10.80.6.160:1068/insert_payment',{
+        pay_code: data.pay_code, 
+        pay_date: data.pay_date, 
+        pay_receipt: data.pay_receipt, 
+        pay_receipt_code: data.pay_receipt_code,
+        pay_receipt_date: data.pay_receipt_date, 
+        pay_amount: data.pay_amount, 
+        pay_detail: data.pay_detail, 
+        pay_desc_id: data.pay_desc_id, 
+        pay_bac_id: data.pay_bac_id, 
+        pay_status: data.pay_status, 
+        pay_editor: data.pay_editor
+    }).pipe(map((res)=>res.json()));
+  }
+  get_last_pay_code(){
+    return this.http.get('http://10.80.6.160:1068/get_last_pay_code').pipe(map((res)=>res.json()));
+  }
 }

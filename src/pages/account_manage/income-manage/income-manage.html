@@ -24,7 +24,7 @@
       </button>
     </ion-item-options>
     <ion-item-options side="right"> <!-- Slide bar delete -->
-      <button ion-button color="danger">
+      <button ion-button color="danger" (click)="show_alert_del_inc(objs, objs.inc_id)">
         <ion-icon name="trash"></ion-icon>
         ลบข้อมูล
       </button>

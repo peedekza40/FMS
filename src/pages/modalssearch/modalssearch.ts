@@ -14,8 +14,8 @@ export class ModalssearchPage implements OnInit {
   private bac_id:number;
   private start_date:string;
   private end_date:string;
-  public now_start_Date = new Date().toISOString();
-  public now_end_Date = new Date().toISOString();
+  public now_start_Date = moment(new Date()).format('YYYY-MM-DD').toString();;
+  public now_end_Date = moment(new Date()).format('YYYY-MM-DD').toString();;
   private Bank_acc_data:Bac_data[];
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private BacData: MBankaccountProvider, private reportDataSearch: ReportDataTranferProvider) {
   }

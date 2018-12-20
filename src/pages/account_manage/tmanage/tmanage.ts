@@ -20,13 +20,15 @@ import * as moment from 'moment';
 })
 export class TmanagePage implements OnInit {
   myDate : any;
+  tabIndex: Number;
   tab2Root = IncomeManagePage;
   tab3Root = PaymentManagePage;
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public MReportIncomeProvider: MReportIncomeProvider,
     public RetrieveDataProvider: RetrieveDataProvider) {
-   // this.myDate = moment(new Date()).format('MMM DoYY');
-  //  this.NowDate = moment(new Date()).format('Do MMMM YYYY');
+  //this.myDate = moment(new Date()).format('MMM DoYY');
+  //this.NowDate = moment(new Date()).format('Do MMMM YYYY');
+    this.tabIndex = this.RetrieveDataProvider.index;
   }
 
   ionViewDidLoad() {
@@ -42,6 +44,10 @@ export class TmanagePage implements OnInit {
   testdate(){
     this.RetrieveDataProvider.RetrieveData(this.myDate);
     this.navCtrl.push(TmanagePage,{},{animate:false});
+  }
+
+  changeTab(index){
+    this.RetrieveDataProvider.set_tabIndex(index);
   }
 
 }

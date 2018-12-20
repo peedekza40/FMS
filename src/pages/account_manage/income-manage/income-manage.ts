@@ -43,10 +43,9 @@ export class IncomeManagePage implements OnInit {
     // console.log(date);
     this.date = this.RetrieveDataProvider.date;
     console.log(this.date);
-    //console.log(this.date);
     this.MReportIncomeProvider.get_by_inc_date(this.date).subscribe((response) => {
       this.income_report = response;
-      console.log(response);
+     console.log(response);
     });
   } 
   removeObjs(objs) {

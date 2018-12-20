@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 import {MReportIncomeProvider} from '../../../../providers/m-report-income/m-report-income'
 import { MDescriptionProvider } from '../../../../providers/m-description/m-description';
 import { MBankaccountProvider } from '../../../../providers/m-bankaccount/m-bankaccount';
 import * as moment from 'moment';
-import { AddAccountPage } from '../add-account';
 /**
  * Generated class for the AddIncomePage page.
  *
@@ -23,10 +22,10 @@ export class AddIncomePage{
   bankacc_obj: bankacc [];
 
   inc_code : string;
-  inc_date: string;
+  inc_date: string = moment(new Date()).format('YYYY-MM-DD').toString();
   inc_receipt: string;
   inc_receipt_code: string;
-  inc_receipt_date: string;
+  inc_receipt_date: string = moment(new Date()).format('YYYY-MM-DD').toString();;
   inc_amount: number;
   inc_detail: string;
   inc_desc_id: number;
@@ -35,8 +34,7 @@ export class AddIncomePage{
   inc_editor: number;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-    public appCtrl: App, 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl:AlertController,
     public MReportIncomeProvider: MReportIncomeProvider,
     public MDescriptionProvider: MDescriptionProvider,  
     public MBankaccountProvider:MBankaccountProvider) {
@@ -67,6 +65,7 @@ export class AddIncomePage{
     this.MBankaccountProvider.get_bankAccount_by_bacActive().subscribe((response) => {
       this.bankacc_obj = response;
     });
+    console.log(this.inc_date);
   }
   formSubmit(){
     this.data = {
@@ -82,9 +81,21 @@ export class AddIncomePage{
       inc_status: "Y",
       inc_editor: 2,
     }
-    // this.MReportIncomeProvider.insert_income(this.data).subscribe((response) => {
-    // });
+    this.MReportIncomeProvider.insert_income(this.data).subscribe((response) => {
+    });
+    this.presentAlert();
   }
+
+  async presentAlert() {
+    const alert = await this.alertCtrl.create({
+      title: 'บันทึกรายการสำเร็จ',
+      message: 'validate is coming....',
+      buttons: ['ตกลง']
+    });
+
+    await alert.present();
+  }
+  
   leftPad(str: string, len: number, ch='.'): string {
     len = len - str.length + 1;
     return len > 0 ? new Array(len).join(ch) + str : str;

@@ -115,6 +115,9 @@ export class IncomeReportPage implements OnInit{
                 this.report_income.splice(index,1);
               }//if
             });
+            this.MReportIncomeProvider.delete_income(id).subscribe((response) => {
+              console.log(response);
+            })
             console.log(id);
             console.log('Agree clicked');
           }//handler

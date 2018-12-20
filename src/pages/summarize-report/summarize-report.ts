@@ -26,7 +26,7 @@ export class SummarizeReportPage implements OnInit{
   payment_report: Report_pay[]; 
   sum_inc : number = 0;
   sum_pay : number = 0;
-  result : number = 0;
+  result:number = 0;
   bac_id : number ;
   start_date : string;
   end_date : string;
@@ -124,6 +124,9 @@ export class SummarizeReportPage implements OnInit{
                 this.income_report.splice(index,1);
               }//if
             });
+            this.MReportIncomeProvider.delete_income(id).subscribe((response) => {
+              console.log(response);
+            })
             console.log(id);
             console.log('Agree clicked');
           }//handler
@@ -132,6 +135,7 @@ export class SummarizeReportPage implements OnInit{
     });
     confirm.present();
   }//show_alert_del
+  
 
   show_alert_del_pay(obj,id){
     const confirm = this.alertCtrl.create({

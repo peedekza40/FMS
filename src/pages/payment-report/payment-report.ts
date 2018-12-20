@@ -88,7 +88,7 @@ export class PaymentReportPage {
     //   return sum_total;
   }//get_sum
 
-  show_alert_del(obj){
+  show_alert_del(obj,id){
     const confirm = this.alertCtrl.create({
       title: 'ลบรายการบัญชี',
       message: 'ต้องการลบรายการบัญชี?',
@@ -107,6 +107,10 @@ export class PaymentReportPage {
                 this.report_payment.splice(index,1);
               }//if
             });
+            this.MReportPaymentProvider.delete_payment(id).subscribe((response) => {
+              console.log(response);
+            })
+            console.log(id);
             console.log('Agree clicked');
           }//handler
         }

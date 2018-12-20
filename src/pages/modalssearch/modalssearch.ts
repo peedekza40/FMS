@@ -14,6 +14,8 @@ export class ModalssearchPage implements OnInit {
   private bac_id:number;
   private start_date:string;
   private end_date:string;
+  public now_start_Date = new Date().toISOString();
+  public now_end_Date = new Date().toISOString();
   private Bank_acc_data:Bac_data[];
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private BacData: MBankaccountProvider, private reportDataSearch: ReportDataTranferProvider) {
   }
@@ -41,14 +43,12 @@ export class ModalssearchPage implements OnInit {
     if(s_d == ''){
       this.start_date = moment().format('YYYY-MM-DD').toString();
     }else{
-      this.start_date = moment(s_d).format('YYYY-MM-DD').toString();
-    }
+      this.start_date = s_d.year + '-' + s_d.month + '-' + s_d.day;    }
 
     if(e_d == ''){
       this.end_date = moment().format('YYYY-MM-DD').toString();
     }else{
-      this.end_date = moment(e_d).format('YYYY-MM-DD').toString();
-    }
+      this.end_date = e_d.year + '-' + e_d.month + '-' + e_d.day;    }
 
     /* push data to report page */
     this.reportDataSearch.bac_id = this.bac_id;

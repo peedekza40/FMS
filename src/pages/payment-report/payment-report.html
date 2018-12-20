@@ -20,10 +20,10 @@
        <ion-label text-right ion-text color="danger">- {{objs.pay_amount}}</ion-label>
       </ion-item>
       <ion-item-options side="right">
-          <button ion-button color="danger" (click)="show_alert_del(objs)">ลบข้อมูล</button>
+          <button ion-button color="danger" (click)="show_alert_del(objs,objs.pay_id)">ลบข้อมูล</button>
       </ion-item-options>
       <ion-item-options side="left">
-        <button ion-button (click)="info(item)">แก้ไขข้อมูล</button>
+        <button ion-button color="warning" (click)="info(item)">แก้ไขข้อมูล</button>
     </ion-item-options>
     </ion-item-sliding>
   </ion-item-group>

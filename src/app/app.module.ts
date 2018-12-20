@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { ErrorHandler, NgModule} from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import {FormsModule} from '@angular/forms';
 
@@ -19,6 +19,9 @@ import { MReportIncomeProvider } from '../providers/m-report-income/m-report-inc
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen'; 
 import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-payment';
+import { ModalssearchPage } from '../pages/modalssearch/modalssearch';
+import { ReportDataTranferProvider } from '../providers/report-data-tranfer/report-data-tranfer';
+import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,7 @@ import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-p
     SummarizeReportPage,
     IncomeReportPage,
     PaymentReportPage,
-    IncomeManagePage
+    ModalssearchPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,7 @@ import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-p
     SummarizeReportPage,
     IncomeReportPage,
     PaymentReportPage,
-    IncomeManagePage
+    ModalssearchPage
   ],
   providers: [
     StatusBar,
@@ -56,7 +59,9 @@ import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-p
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MReportIncomeProvider,
     MReportPaymentProvider,
-    MReportPaymentProvider
+    MReportPaymentProvider,
+    ReportDataTranferProvider,
+    MBankaccountProvider
   ]
 })
 export class AppModule {}

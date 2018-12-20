@@ -1,7 +1,6 @@
-import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import {map} from 'rxjs/operators';
-
+import { Http } from '@angular/http';
+import { map } from 'rxjs/operators';
 /*
   Generated class for the MBankaccountProvider provider.
 
@@ -12,6 +11,11 @@ import {map} from 'rxjs/operators';
 export class MBankaccountProvider {
 
   constructor(public http: Http) {
+    console.log('Hello MBankaccountProvider Provider');
+  }
+
+  get_all(){
+    return this.http.get('http://10.80.6.160:1068/get_bankAccount_by_bacActive').pipe(map((res)=>res.json()));
   }
 
   get_bankAccount_by_bacActive() {

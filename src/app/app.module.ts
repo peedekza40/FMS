@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { ErrorHandler, NgModule} from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
@@ -18,11 +18,13 @@ import { AddIncomePage } from '../pages/account_manage/add-account/add-income/ad
 import { AddPaymentPage } from '../pages/account_manage/add-account/add-payment/add-payment';
 /*------------------------------providers------------------------------*/
 import { MReportIncomeProvider } from '../providers/m-report-income/m-report-income';
-import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-payment'; 
 import { StatusBar } from '@ionic-native/status-bar';
+import { MReportPaymentProvider } from '../providers/m-report-payment/m-report-payment';
+import { ModalssearchPage } from '../pages/modalssearch/modalssearch';
+import { ReportDataTranferProvider } from '../providers/report-data-tranfer/report-data-tranfer';
+import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MDescriptionProvider } from '../providers/m-description/m-description';
-import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
 import { RetrieveDataProvider } from '../providers/retrieve-data/retrieve-data';
 
 @NgModule({
@@ -34,6 +36,7 @@ import { RetrieveDataProvider } from '../providers/retrieve-data/retrieve-data';
     SummarizeReportPage,
     IncomeReportPage,
     PaymentReportPage,
+    ModalssearchPage,
     IncomeManagePage,
     PaymentManagePage,
     AddIncomePage,
@@ -54,6 +57,7 @@ import { RetrieveDataProvider } from '../providers/retrieve-data/retrieve-data';
     SummarizeReportPage,
     IncomeReportPage,
     PaymentReportPage,
+    ModalssearchPage,
     IncomeManagePage,
     PaymentManagePage,
     AddIncomePage,
@@ -64,8 +68,9 @@ import { RetrieveDataProvider } from '../providers/retrieve-data/retrieve-data';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MReportIncomeProvider,
-    MDescriptionProvider,
+    ReportDataTranferProvider,
     MBankaccountProvider,
+    MDescriptionProvider,
     MReportPaymentProvider,
     RetrieveDataProvider
   ]

@@ -13,6 +13,7 @@ import * as moment from 'moment';
  */
 
 @IonicPage()
+
 @Component({
   selector: 'page-tmanage',
   templateUrl: 'tmanage.html',
@@ -33,6 +34,7 @@ export class TmanagePage implements OnInit {
     //console.log('ionViewDidLoad TmanagePage');
     //console.log(this.myDate);
   }
+
   ngOnInit() {
     this.myDate = this.RetrieveDataProvider.date;
     this.myDate = moment(this.myDate).format("YYYY-MM-DD");

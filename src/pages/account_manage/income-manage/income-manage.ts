@@ -21,14 +21,13 @@ export class IncomeManagePage implements OnInit {
   inc_id = 0;
   inc_obj:report_inc;
   myDate : string;
-  date_para: Date;
   date: any;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,  
     public MReportIncomeProvider: MReportIncomeProvider,
     public RetrieveDataProvider: RetrieveDataProvider,
-    public editModal:ModalController, 
+    public editIncomeModal:ModalController, 
     public view:ViewController) {
       
   }
@@ -47,6 +46,7 @@ export class IncomeManagePage implements OnInit {
       this.income_report = response;
      console.log(response);
     });
+    
   } 
   removeObjs(objs) {
     objs.forEach((element, index) => {
@@ -68,7 +68,7 @@ export class IncomeManagePage implements OnInit {
   //  }
 
   openEditModal(id){
-    const myModal = this.editModal.create('EditModalPage', {inc_id:id});
+    const myModal = this.editIncomeModal.create('EditModalPage', {inc_id:id});
     myModal.present();
   
 

@@ -11,8 +11,9 @@ import {map} from 'rxjs/operators';
 */
 @Injectable()
 export class MReportIncomeProvider {
-
+  date: string;
   constructor(public http: Http) {
+    this.date = new Date().toISOString();
   }
 
   // get_by_inc_date() {
@@ -31,7 +32,14 @@ export class MReportIncomeProvider {
      inc_receipt_date:inc_receipt_date, inc_amount:inc_amount, inc_detail:inc_detail, inc_desc_id:inc_desc_id, inc_bac_id:inc_bac_id, inc_status:inc_status, 
      inc_editor:inc_editor}).pipe(map((res)=>res.json()));
   }
+  
+  get_income_by_rangedate_and_bac(bac_id,startDate,endDate) {
+    return this.http.post('http://10.80.6.160:1068/get_income_by_rangedate_and_bac',{bac_id: bac_id,startDate: startDate,endDate: endDate}).pipe(map((res)=>res.json()));
+  }
 
+  delete_income(inc_id) {
+    return this.http.put('http://10.80.6.160:1068/delete_income',{inc_id: inc_id}).pipe(map((res)=>res.json()));
+  }
   insert_income(data){
     return this.http.post('http://10.80.6.160:1068/insert_income',{
         inc_code: data.inc_code, 

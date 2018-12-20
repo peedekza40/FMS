@@ -11,52 +11,52 @@
 <ion-content padding>
     <ion-list >
       <ion-item>
-        <ion-label>เลขที่รายการบัญชี</ion-label>
-        <ion-input type="text" disabled clearInput></ion-input> 
+        <ion-label stacked>เลขที่รายการบัญชี</ion-label>
+        <ion-input type="text" [(ngModel)]="inc_code" disabled clearInput></ion-input> 
       </ion-item>
     
       <ion-item>
         <ion-label floating>วันที่ลงรายการบัญชี</ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY" ></ion-datetime>
+        <ion-datetime [(ngModel)]="inc_date" displayFormat="MM/DD/YYYY" ></ion-datetime>
       </ion-item>
 
       <ion-item>
         <ion-label floating>เลือกบัญชีธนาคาร</ion-label>
-        <ion-select multiple="false">
-            <div>
-                  <ion-option></ion-option>
+        <ion-select [(ngModel)]="inc_bac_id" multiple="false">
+            <div *ngFor="let bankacc_opt of bankacc_obj;">
+                  <ion-option [value]="bankacc_opt.bacId">{{bankacc_opt.bacName}}</ion-option>
             </div>
         </ion-select>
       </ion-item>
 
       <ion-item>
         <ion-label floating>เล่มที่ใบเสร็จ</ion-label>
-        <ion-input type="text" clearInput></ion-input>
+        <ion-input [(ngModel)]="inc_receipt" type="text" clearInput></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>เลขที่ใบเสร็จ</ion-label>
-        <ion-input type="text" clearInput></ion-input>
+        <ion-input [(ngModel)]="inc_receipt_code" type="text" clearInput></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label floating>คำอธิบาย</ion-label>
-        <ion-select  multiple="false">
-          <div *ngFor="">
-            <ion-option  [value]="" selected="true"></ion-option>
+        <ion-label floating>คำอธิบายรายการ</ion-label>
+        <ion-select [(ngModel)]="inc_desc_id" multiple="false">
+          <div *ngFor="let desc_opt of desc_obj;">
+            <ion-option  [value]="desc_opt.desc_id">{{desc_opt.desc_description}}</ion-option>
           </div>
         </ion-select>
       </ion-item>
 
       <ion-item>
         <ion-label floating>จำนวนเงิน</ion-label>
-        <ion-input type="number" clearInput></ion-input>
+        <ion-input [(ngModel)]="inc_amount" type="number" clearInput></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>วันที่ใบเสร็จ</ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
+        <ion-datetime [(ngModel)]="inc_receipt_date" displayFormat="MM/DD/YYYY"></ion-datetime>
       </ion-item>
     </ion-list>
   
-  <button ion-button float-right>ยืนยัน</button>
+  <button ion-button float-right (click)="formSubmit()" >ยืนยัน</button>
 </ion-content>

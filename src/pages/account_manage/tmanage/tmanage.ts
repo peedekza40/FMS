@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { IncomeManagePage } from '../income-manage/income-manage';
 import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
 import { PaymentManagePage } from '../payment-manage/payment-manage';
+import { RetrieveDataProvider } from '../../../providers/retrieve-data/retrieve-data';
 import * as moment from 'moment';
 /**
  * Generated class for the TmanagePage page.
@@ -20,7 +21,9 @@ export class TmanagePage implements OnInit {
   myDate : string;
   tab2Root = IncomeManagePage;
   tab3Root = PaymentManagePage;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public MReportIncomeProvider: MReportIncomeProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    public MReportIncomeProvider: MReportIncomeProvider,
+    public RetrieveDataProvider: RetrieveDataProvider) {
     this.myDate = moment(new Date()).format('MMM Do YY');
   }
 
@@ -31,7 +34,8 @@ export class TmanagePage implements OnInit {
   } 
 
   testdate(){
-    console.log(this.myDate);
+    this.RetrieveDataProvider.RetrieveData(this.myDate);
+    this.navCtrl.push(TmanagePage);
   }
 
 }

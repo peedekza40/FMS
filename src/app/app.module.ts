@@ -23,6 +23,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MDescriptionProvider } from '../providers/m-description/m-description';
 import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
+import { RetrieveDataProvider } from '../providers/retrieve-data/retrieve-data';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { MBankaccountProvider } from '../providers/m-bankaccount/m-bankaccount';
     MReportIncomeProvider,
     MDescriptionProvider,
     MBankaccountProvider,
-    MReportPaymentProvider
+    MReportPaymentProvider,
+    RetrieveDataProvider
   ]
 })
 export class AppModule {}

@@ -24,7 +24,7 @@ export class AddAccountPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddAccountPage');
+    //console.log('ionViewDidLoad AddAccountPage');
   }
 
   logForm() {

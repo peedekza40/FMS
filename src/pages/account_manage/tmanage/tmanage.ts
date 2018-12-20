@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { IncomeManagePage } from '../income-manage/income-manage';
 import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
 import { PaymentManagePage } from '../payment-manage/payment-manage';
+import { RetrieveDataProvider } from '../../../providers/retrieve-data/retrieve-data';
 import * as moment from 'moment';
 /**
  * Generated class for the TmanagePage page.
@@ -18,36 +19,29 @@ import * as moment from 'moment';
   templateUrl: 'tmanage.html',
 })
 export class TmanagePage implements OnInit {
-  myDate : string;
+  myDate : any;
   tab2Root = IncomeManagePage;
   tab3Root = PaymentManagePage;
-
-  constructor(public navCtrl: NavController, 
-              public navParams: NavParams, 
-              public MReportIncomeProvider: MReportIncomeProvider) {
-    //this.myDate = moment(new Date()).format('MMM Do YY');
-    //console.log(this.myDate);
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    public MReportIncomeProvider: MReportIncomeProvider,
+    public RetrieveDataProvider: RetrieveDataProvider) {
+   // this.myDate = moment(new Date()).format('MMM DoYY');
+  //  this.NowDate = moment(new Date()).format('Do MMMM YYYY');
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad TmanagePage');
+    //console.log(this.myDate);
   }
 
   ngOnInit() {
-    this.myDate = this.MReportIncomeProvider.date;
+    this.myDate = this.RetrieveDataProvider.date;
     this.myDate = moment(this.myDate).format("YYYY-MM-DD");
-    //this.myDate = '2018-12-16';
-    //this.navCtrl.push(IncomeManagePage,{date:this.myDate});
-    //this.navCtrl.pop();
   } 
 
   testdate(){
-    this.MReportIncomeProvider.set_date_val(this.myDate);
-    //this.myDate = moment(this.myDate).format("YYYY-MM-DD");
-    // this.navCtrl.push(IncomeManagePage);
-    this.navCtrl.push(TmanagePage);
-    this.myDate = this.MReportIncomeProvider.date;
-    //this.navCtrl.pop();
+    this.RetrieveDataProvider.RetrieveData(this.myDate);
+    this.navCtrl.push(TmanagePage,{},{animate:false});
   }
 
 }

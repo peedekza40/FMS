@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController} from 'ionic-angular';
 import { MReportIncomeProvider } from '../../../providers/m-report-income/m-report-income';
+import { RetrieveDataProvider } from '../../../providers/retrieve-data/retrieve-data';
 import * as moment from 'moment';
 
 /**
@@ -20,26 +21,30 @@ export class IncomeManagePage implements OnInit {
   inc_id = 0;
   inc_obj:report_inc;
   myDate : string;
-  date_para: string;
+  date: any;
 
   constructor(public navCtrl: NavController, 
-              public navParams: NavParams,  
-              public MReportIncomeProvider: MReportIncomeProvider, 
-              public editIncomeModal:ModalController, 
-              public view:ViewController) {
+    public navParams: NavParams,  
+    public MReportIncomeProvider: MReportIncomeProvider,
+    public RetrieveDataProvider: RetrieveDataProvider,
+    public editIncomeModal:ModalController, 
+    public view:ViewController) {
+      
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad IncomeManagePage');
+    //console.log(this.RetrieveDataProvider.getData());
+    
   }
   ngOnInit() {
-    var date = this.MReportIncomeProvider.date;
-    //var date = this.date_para = this.navParams.get('date');
-    //var date = '2018-12-16';
-    console.log(date);
-    this.MReportIncomeProvider.get_by_inc_date(date).subscribe((response) => {
+    // var date = this.date_para = this.navParams.get('date');
+    // console.log(date);
+    this.date = this.RetrieveDataProvider.date;
+    console.log(this.date);
+    this.MReportIncomeProvider.get_by_inc_date(this.date).subscribe((response) => {
       this.income_report = response;
-      console.log(response);
+     console.log(response);
     });
     
   } 
@@ -52,15 +57,15 @@ export class IncomeManagePage implements OnInit {
   }
 
   // Edit show_alert_del
-  testdate(){
-   //this.date=this.myDate;
-  // console.log(this.date);
-    this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
-     this.inc_obj = response;
-     console.log(response);
-   });
+  // testdate(){
+  //  //this.date=this.myDate;
+  // // console.log(this.date);
+  //   this.MReportIncomeProvider.get_by_inc_date(this.temp).subscribe((response) => {
+  //    this.inc_obj = response;
+  //    console.log(response);
+  //  });
  
-   }
+  //  }
 
   openEditModal(id){
     const myModal = this.editIncomeModal.create('EditModalPage', {inc_id:id});
@@ -93,10 +98,6 @@ export class IncomeManagePage implements OnInit {
       this.navCtrl.setRoot(this.navCtrl.getActive().component);
     });
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/Boom
 }
 
 

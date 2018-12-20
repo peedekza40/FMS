@@ -20,7 +20,7 @@ export class IncomeManagePage implements OnInit {
   inc_id = 0;
   inc_obj:report_inc;
   myDate : string;
-  date: string;
+  date_para: Date;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,  
@@ -31,9 +31,13 @@ export class IncomeManagePage implements OnInit {
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad IncomeManagePage');
+    // this.temp=this.navParams.get("mydate");
+    // console.log(this.temp);
   }
   ngOnInit() {
-    this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
+    var date = this.date_para = this.navParams.get('date');
+    console.log(date);
+    this.MReportIncomeProvider.get_by_inc_date(date).subscribe((response) => {
       this.income_report = response;
       console.log(response);
     });
@@ -47,15 +51,15 @@ export class IncomeManagePage implements OnInit {
   }
 
   // Edit show_alert_del
-  testdate(){
-   //this.date=this.myDate;
-  // console.log(this.date);
-    this.MReportIncomeProvider.get_by_inc_date().subscribe((response) => {
-     this.inc_obj = response;
-     console.log(response);
-   });
+  // testdate(){
+  //  //this.date=this.myDate;
+  // // console.log(this.date);
+  //   this.MReportIncomeProvider.get_by_inc_date(this.temp).subscribe((response) => {
+  //    this.inc_obj = response;
+  //    console.log(response);
+  //  });
  
-   }
+  //  }
 
   openEditModal(id){
     const myModal = this.editModal.create('EditModalPage', {inc_id:id});

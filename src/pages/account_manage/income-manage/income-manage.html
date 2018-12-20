@@ -4,40 +4,32 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+
 <ion-content padding>
-    <!-- Header table -->       
-    <ion-row>
-        <ion-col size="1" >
-                <h1 style="font-size: 18px; text-align: center;"><b>ตารางลงรายการบัญชีรายรับ-รายจ่าย</b></h1>
-        </ion-col>
-    </ion-row>     
-    <ion-row>
-                <ion-item>   
-                        <ion-label   style="font-size: 13px; text-align: left;">รายละเอียด</ion-label>
-                        <ion-label  style="font-size: 13px;  text-align: center;">คำอธิบายรายการ</ion-label>
-                        <ion-label  style="font-size: 13px;  text-align: right;">จำนวนเงิน</ion-label>
-                    </ion-item>
-    </ion-row>
-   <!-- Data -->
-   <ion-list>
-    <ion-item-sliding *ngFor="let objs of income_report; let i = index">
-      <ion-item>
-            <ion-label style="font-size: 12px;  text-align: left;">{{objs.inc_code}}</ion-label>
-            <ion-label style="font-size: 12px;  text-align: center;">{{objs.desc_description}}</ion-label>
-            <ion-label style="font-size: 12px;  text-align: right;">{{objs.inc_amount}}</ion-label> 
-      </ion-item>
-      <ion-item-options side="left"> <!-- Slide bar edit -->
-        <button ion-button color="primary">
-          <ion-icon name="edit"></ion-icon>
-          แก้ไขข้อมูล
-        </button>
-      </ion-item-options>
-      <ion-item-options side="right"> <!-- Slide bar delete -->
-        <button ion-button color="danger">
-          <ion-icon name="delete"></ion-icon>
-          ลบข้อมูล
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
+  <!-- Header table -->       
+  <br><br><br><br><br><br><br><br><br><br>
+  
+ <!-- Data -->
+ <ion-list>
+  <ion-item-sliding *ngFor="let objs of income_report; let i = index">
+    <ion-item>
+          <ion-label style="font-size: 12px;  text-align: left;">{{objs.inc_code}}</ion-label>
+          <ion-label style="font-size: 12px;  text-align: center;">{{objs.desc_description}}</ion-label>
+          <ion-label style="font-size: 12px;  text-align: right; color:darkgreen;">+{{objs.inc_amount| number : fractionSize}}</ion-label> 
+    </ion-item>
+    <ion-item-options side="left"> <!-- Slide bar edit -->
+      <button ion-button color="light" (click)="openEditModal(objs.inc_id)">
+        <ion-icon name="brush"></ion-icon>
+        แก้ไขข้อมูล
+      </button>
+    </ion-item-options>
+    <ion-item-options side="right"> <!-- Slide bar delete -->
+      <button ion-button color="danger">
+        <ion-icon name="trash"></ion-icon>
+        ลบข้อมูล
+      </button>
+      
+    </ion-item-options>
+  </ion-item-sliding>
 </ion-list>
 </ion-content>

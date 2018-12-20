@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-buttons>
+        <button ion-button icon-only navPop>
+            <ion-icon name="arrow-round-back"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title align-items-center>เพิ่มรายการบัญชี</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-row>
+    <ion-tabs selectedIndex="0" tabsPlacement="top" color="primary">
+      <ion-tab [root]="tab_income" tabTitle="รายรับ"></ion-tab>
+      <ion-tab [root]="tab_payment" tabTitle="รายจ่าย"></ion-tab>
+    </ion-tabs>
+  </ion-row>
+</ion-content>

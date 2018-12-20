@@ -18,4 +18,7 @@ export class MBankaccountProvider {
     return this.http.get('http://10.80.6.160:1068/get_bankAccount_by_bacActive').pipe(map((res)=>res.json()));
   }
 
+  get_bankAccount_by_bacActive() {
+    return this.http.get('http://10.80.6.160:1068/get_bankAccount_by_bacActive',{}).pipe(map((res)=>res.json()));
+  }
 }

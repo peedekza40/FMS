@@ -18,24 +18,28 @@ import * as moment from 'moment';
   templateUrl: 'tmanage.html',
 })
 export class TmanagePage implements OnInit {
-  myDate : string;
+  myDate : any;
   tab2Root = IncomeManagePage;
   tab3Root = PaymentManagePage;
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public MReportIncomeProvider: MReportIncomeProvider,
     public RetrieveDataProvider: RetrieveDataProvider) {
-    this.myDate = moment(new Date()).format('MMM Do YY');
+   // this.myDate = moment(new Date()).format('MMM DoYY');
+  //  this.NowDate = moment(new Date()).format('Do MMMM YYYY');
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad TmanagePage');
+    //console.log(this.myDate);
   }
   ngOnInit() {
+    this.myDate = this.RetrieveDataProvider.date;
+    this.myDate = moment(this.myDate).format("YYYY-MM-DD");
   } 
 
   testdate(){
     this.RetrieveDataProvider.RetrieveData(this.myDate);
-    this.navCtrl.push(TmanagePage);
+    this.navCtrl.push(TmanagePage,{},{animate:false});
   }
 
 }

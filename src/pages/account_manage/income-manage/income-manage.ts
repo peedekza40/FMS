@@ -22,6 +22,7 @@ export class IncomeManagePage implements OnInit {
   inc_obj:report_inc;
   myDate : string;
   date_para: Date;
+  date: any;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,  
@@ -29,16 +30,21 @@ export class IncomeManagePage implements OnInit {
     public RetrieveDataProvider: RetrieveDataProvider,
     public editModal:ModalController, 
     public view:ViewController) {
+      
   }
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad IncomeManagePage');
-    console.log(this.RetrieveDataProvider.getData());
+    //console.log(this.RetrieveDataProvider.getData());
+    
   }
   ngOnInit() {
-    var date = this.date_para = this.navParams.get('date');
-    console.log(date);
-    this.MReportIncomeProvider.get_by_inc_date(date).subscribe((response) => {
+    // var date = this.date_para = this.navParams.get('date');
+    // console.log(date);
+    this.date = this.RetrieveDataProvider.date;
+    console.log(this.date);
+    //console.log(this.date);
+    this.MReportIncomeProvider.get_by_inc_date(this.date).subscribe((response) => {
       this.income_report = response;
       console.log(response);
     });

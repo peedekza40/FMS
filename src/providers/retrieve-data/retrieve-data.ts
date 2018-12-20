@@ -1,7 +1,7 @@
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import {map} from 'rxjs/operators';
-
+import * as moment from 'moment';
 /*
   Generated class for the RetrieveDataProvider provider.
 
@@ -10,18 +10,19 @@ import {map} from 'rxjs/operators';
 */
 @Injectable()
 export class RetrieveDataProvider {
-  data: any;
+  date: any;
 
   constructor(public http: Http) {
+    this.date = new Date().toISOString();
     //console.log('Hello RetrieveDataProvider Provider');
   }
 
   RetrieveData(data){
-    this.data = data;
+    this.date = data;
   }
   
   getData(){
-    return this.data;
+    return this.date;
   }
 
 }

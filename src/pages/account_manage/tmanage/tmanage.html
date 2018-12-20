@@ -14,13 +14,15 @@
         <ion-item padding>
           <ion-label
             ><ion-icon name="search">
-              เลือกวันที่ต้องการค้นหา</ion-icon
+               กรุณาเลือกวันที่</ion-icon
             ></ion-label
           >
           <ion-datetime
-            displayFormat="MM/DD/YYYY"
+            displayFormat="DD/MM/YYYY"
             [(ngModel)]="myDate"
             (ngModelChange)="testdate()"
+            cancelText="ยกเลิก"
+            doneText="ค้นหา"
           >
           </ion-datetime>
         </ion-item>
